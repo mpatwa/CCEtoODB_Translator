@@ -454,8 +454,8 @@ int CCadFormatAcceptorMentorLayout::getAssociateFileList(const CString& fullPath
       {
          finder.GetLastWriteTime(tmpModifiedTime);
 
-         if (m_FileType == Type_Mentor_Layout)
-            mentorFileType = tst_mentorbrdfiletype(fp);
+         //if (m_FileType == Type_Mentor_Layout)
+            //mentorFileType = tst_mentorbrdfiletype(fp);
 
          if (m_FileType == Type_Mentor_Neutral_Layout && !FileNameList.GetAt(MEN_NEUT).IsEmpty() && mentorFileType != MEN_WIRE)
          {

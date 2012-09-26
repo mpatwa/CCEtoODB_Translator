@@ -5582,7 +5582,7 @@ CPPNetResult *CPPNetResultList::GetResultForNet(CString netName)
    return NULL;
 }
 
-extern bool OdbPpIn_TranslateOdbNetName(CString& netName);
+//extern bool OdbPpIn_TranslateOdbNetName(CString& netName);
 
 int CProbePlacementSolution::LoadXML(CXMLNode *node)
 {
@@ -5620,8 +5620,8 @@ int CProbePlacementSolution::LoadXML(CXMLNode *node)
             CString netName = ppRes->GetNetName();
 
             // Concession to knowing this is coming from vPlan, hence ODB. Convert the ODB $None$ net name like ODB importer does.
-            if (OdbPpIn_TranslateOdbNetName(netName))
-               ppRes->SetNetName(netName);
+            //if (OdbPpIn_TranslateOdbNetName(netName))
+               //ppRes->SetNetName(netName);
 
             if (netName.IsEmpty())
             {
@@ -8104,13 +8104,13 @@ void COptionsPP::OnBnClickedLoadFeedback()
       return;
 
    CString fileName = fileDlg.GetPathName();
-   if (!m_pTestPlan->ReadTestWayFile(fileName, m_useCase?true:false))
+   /*if (!m_pTestPlan->ReadTestWayFile(fileName, m_useCase?true:false))
    {
       CString msg;
       msg.Format("Error reading %s", fileName);
       ErrorMessage(msg, "Probe Placement");
       return;
-   }
+   }*/
 
    m_pParent->PostMessage(WM_COMMAND, IPP_UPDATEPAGES);
 }

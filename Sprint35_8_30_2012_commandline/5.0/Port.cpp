@@ -19,7 +19,6 @@
 #include "crypt.h"
 #include "lyr_lyr.h"
 #include "CCEtoODB.h"
-#include "AgilentSjPlxIn.h"
 #include "CAMCADNavigator.h"
 #include "MainFrm.h"
 #include <direct.h>

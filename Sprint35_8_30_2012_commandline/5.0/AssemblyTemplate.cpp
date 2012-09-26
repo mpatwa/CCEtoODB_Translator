@@ -2,7 +2,6 @@
 #include "stdafx.h"
 #include "DirDlg.h"
 #include "AssemblyTemplate.h"
-#include "CustomAssembly_writer.h"
 #include "MultipleMachine.h"
 #include ".\assemblytemplate.h"
 

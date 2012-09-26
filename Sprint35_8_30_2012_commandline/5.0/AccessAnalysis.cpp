@@ -7452,7 +7452,7 @@ void CAccessAnalysisSolution::WriteXML(CWriteFormat& writeFormat, CCamCadFileWri
    writeFormat.writef("</AASolution>\n");
 }
 
-extern bool OdbPpIn_TranslateOdbNetName(CString& netName);
+//extern bool OdbPpIn_TranslateOdbNetName(CString& netName);
 
 int CAccessAnalysisSolution::LoadXML(CXMLNode *node)
 {
@@ -7491,8 +7491,8 @@ int CAccessAnalysisSolution::LoadXML(CXMLNode *node)
             CString netName = accLoc->GetNetName();
 
             // Concession to knowing this is coming from vPlan, hence ODB. Convert the ODB $None$ net name like ODB importer does.
-            if (OdbPpIn_TranslateOdbNetName(netName))
-               accLoc->SetNetName(netName);
+            //if (OdbPpIn_TranslateOdbNetName(netName))
+               //accLoc->SetNetName(netName);
 
             CAANetAccess *netAccess = NULL;
             if (!m_netAccessMap.Lookup(netName, (CObject*&)netAccess))

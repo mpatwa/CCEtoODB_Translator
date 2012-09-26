@@ -1316,7 +1316,7 @@ public:
    afx_msg void OnGerberEducatorTerminateSession();
 #endif
 
-   afx_msg void OnDftanalysisKelvinanalysis();
+   //afx_msg void OnDftanalysisKelvinanalysis();
    afx_msg void OnUpdateDftanalysisKelvinanalysis(CCmdUI *pCmdUI);
    afx_msg void OnPcbConvertviatopcbcomponent();
    afx_msg void OnProbableShortAnalysis();

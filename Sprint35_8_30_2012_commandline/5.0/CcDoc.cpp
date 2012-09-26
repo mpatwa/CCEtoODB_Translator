@@ -41,7 +41,7 @@
 #include "GerberEducatorUi.h"
 #include "SelectStackDialog.h"
 #include "EnumIterator.h"
-#include "DftDialog.h"
+//#include "DftDialog.h"
 #include "RealPart.h"
 #include "MultipleMachine.h"
 #include "DcaJpeg.h"
@@ -1783,11 +1783,11 @@ void CCEtoODBDoc::OnTerminateStencilStepper()
 }
 
 //_____________________________________________________________________________
-void CCEtoODBDoc::OnDftanalysisKelvinanalysis()
+/*void CCEtoODBDoc::OnDftanalysisKelvinanalysis()
 {
-   CKelvinAnalysisDialog dlg(this);
-   dlg.DoModal(); 
-}
+   //CKelvinAnalysisDialog dlg(this);
+   //dlg.DoModal(); 
+}*/
 
 void CCEtoODBDoc::OnUpdateDftanalysisKelvinanalysis(CCmdUI *pCmdUI)
 {

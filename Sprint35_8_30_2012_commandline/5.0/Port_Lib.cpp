@@ -12,13 +12,10 @@
 #include "gauge.h"
 #include "filetype.h"
 #include <cderr.h>
-#include "apdlg.h"
 #include <float.h>
 #include "format.h"
 #include "formathp.h"
 #include "mentor.h"
-#include "allegin.h"
-#include "gencadin.h"
 #include "cedit.h"
 #include "graph.h"
 #include "ccview.h"
@@ -33,9 +30,6 @@
 #include "dirdlg.h"
 #include "lic.h"
 #include "DFT.h"
-#include "GerberWriter.h"
-#include "ViTechAoiWriter.h"
-#include "ZukenCr5000Reader.h"
 #include "CadFormatRecognizer.h"
 #include "RwUiLib.h"
 

@@ -816,7 +816,7 @@ public:
    void SetRetainProbeSizes(BOOL RetainProbeSizes)          { SetRetainProbeSizes(RetainProbeSizes?true:false);         }
    void SetNetConditionCaseSensitive(bool caseSensitive);
 
-   bool ReadTestWayFile(CString fileName, bool caseSensitive);
+   //bool ReadTestWayFile(CString fileName, bool caseSensitive);
 };
 
 ////////////////////////////////////////////////////////////////////////////////

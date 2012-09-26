@@ -6,7 +6,6 @@
 #include "CCEtoODB.h"
 #include "pcblayer.h"
 #include "pcbutil.h"
-#include "cadif_o.h"
 
 #include <direct.h>
 
@@ -16,7 +15,7 @@
 static char THIS_FILE[] = __FILE__;
 #endif
 
-extern char          *protel_layer[];  // in pfw_out.cpp
+//extern char          *protel_layer[];  // in pfw_out.cpp
 extern CString       pads_layer[];     // in pads_out.cpp
 
 #define NOPHYSICAL   "No Physical"
@@ -4300,7 +4299,7 @@ void CADIFLayer::OnLoadTechnology()
    if (FileDialog.DoModal() != IDOK) return;
    TecName =  FileDialog.GetPathName();
 
-   CADIF_LoadTechnology(TecName);   
+   //CADIF_LoadTechnology(TecName);   
    m_technologyName = TecName;
    UpdateData(FALSE);
 
@@ -4850,8 +4849,8 @@ BOOL ProtelLayerEdit::OnInitDialog()
       break;
    }
 
-   for (int i=0; i<35; i++)
-      m_newCB.AddString(protel_layer[i]);
+   //for (int i=0; i<35; i++)
+      //m_newCB.AddString(protel_layer[i]);
 
    m_newCB.SelectString(0, newname);
 

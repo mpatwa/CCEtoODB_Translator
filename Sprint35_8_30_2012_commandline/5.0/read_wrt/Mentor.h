@@ -31,7 +31,7 @@
 class CCEtoODBDoc;
 class FileStruct;
 
-int tst_mentorbrdfiletype(FILE *ifp);
+//int tst_mentorbrdfiletype(FILE *ifp);
 int do_wires(CCEtoODBDoc *Doc, FileStruct *pcbFile, FILE *fLog, FILE *fWire, int via, int pageUnits);
 
 #endif /*__Mentor_h__*/
