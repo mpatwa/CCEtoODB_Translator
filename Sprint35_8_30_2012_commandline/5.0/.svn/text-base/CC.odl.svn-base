@@ -1,0 +1,424 @@
+// CAMCAD.odl : type library source for CAMCAD.exe
+
+// This file will be processed by the MIDL compiler to produce the
+// type library (CAMCAD.tlb).
+
+#include "olectl.h"
+[ uuid(F8DE4B05-FBC2-11D1-BA40-0080ADB36DBB), version(1.0) ]
+library CAMCAD
+{
+	importlib("stdole32.tlb");
+	
+
+	//  Primary dispatch interface for CCEtoODBDoc
+	
+	[ uuid(F8DE4B06-FBC2-11D1-BA40-0080ADB36DBB) ]
+	dispinterface ICAMCAD
+	{
+		properties:
+			// NOTE - ClassWizard will maintain property information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_PROP(CCEtoODBDoc)
+			//}}AFX_ODL_PROP
+			
+		methods:
+			// NOTE - ClassWizard will maintain method information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_METHOD(CCEtoODBDoc)
+			//}}AFX_ODL_METHOD
+
+	};
+
+	//  Class information for CCEtoODBDoc
+	
+	[ uuid(5BECA79B-EF3B-11D1-BA40-0080ADB36DBB) ]
+	coclass Document
+	{
+		[default] dispinterface ICAMCAD;
+	};
+
+
+	//  Primary dispatch interface for API
+	
+	[ uuid(C3DB3A2F-0B71-11D2-BA40-0080ADB36DBB) ]
+	dispinterface IAPI
+	{
+		properties:
+			// NOTE - ClassWizard will maintain property information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_PROP(API)
+			//}}AFX_ODL_PROP
+			
+		methods:
+			// NOTE - ClassWizard will maintain method information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_METHOD(API)
+			[id(1)] short GraphAperture([in]BSTR name, [in]short shape, [in]double sizeA, [in]double sizeB, [in]double xOffset, [in]double yOffset, [in]double rotation, [in]short dcode);
+			[id(2)] short OverrideColorByRefDes([in]BSTR RefDes, [in]boolean On, [in]short red, [in]short green, [in]short blue);
+			[id(3)] short OverrideColorRemoveAll();
+			[id(4)] short OverrideColorByAttribute([in]BSTR keyword, [in]BSTR value, [in]boolean On, [in]short red, [in]short green, [in]short blue);
+			[id(5)] short Exit();
+			[id(6)] short ZoomLevel([in]double scaleDenom, [in]short scaleNum);
+			[id(7)] short ZoomWindow([in]double x1, [in]double y1, [in]double x2, [in]double y2);
+			[id(8)] short PanRef([in]BSTR refdes);
+			[id(9)] short PanCoord([in]double x, [in]double y);
+			[id(10)] short Redraw();
+			[id(11)] short LayerColor([in]BSTR name, [in]short red, [in]short green, [in]short blue);
+			[id(12)] short LayerShow([in]BSTR name, [in]boolean show);
+			[id(13)] short LayerShowAll([in]boolean show);
+			[id(14)] short TopView();
+			[id(15)] short BottomView();
+			[id(16)] short ColorSet([in]short set);
+			[id(17)] short ClearSelected();
+			[id(18)] short ZoomExtentsOfComponents([in]BSTR compNames);
+			[id(19)] short CloseActiveDocument();
+			[id(20)] short SetAttribByRefDes([in]BSTR keyword, [in]BSTR value, [in]short method, [in]BSTR refDes);
+			[id(21)] short ShadeByRefDes([in]BSTR refDes, [in]boolean On, [in]short red, [in]short green, [in]short blue, [in]boolean Before, [in]boolean Transparent, [in]boolean Hatched);
+			[id(22)] short RemoveShading();
+			[id(23)] short ShowActiveDocument([in]short mode);
+			[id(24)] short GraphTool([in]BSTR name, [in]float size, [in]short tcode, [in]short type);
+			[id(25)] short ZoomExtentsOfComponentsMargin([in]BSTR compNames, [in]short margin);
+			[id(26)] short TurnOnResponse([in]BSTR programID);
+			[id(27)] short TurnOffResponse();
+			[id(28)] short HighlightNet([in]BSTR netName, [in]short red, [in]short green, [in]short blue);
+			[id(29)] short HighlightNetClear([in]BSTR netName);
+			[id(30)] short HighlightNetClearAll();
+			[id(31)] short ZoomExtentsOfNets([in]BSTR netNames);
+			[id(32)] short ZoomExtentsOfNetsMargin([in]BSTR netNames, [in]short margin);
+			[id(33)] short HighlightPin([in]BSTR comp, [in]BSTR pin, [in]short red, [in]short green, [in]short blue);
+			[id(34)] short ShowMainWindow([in]short mode);
+			[id(35)] short SizeMainWindow([in]short x, [in]short y, [in]short width, [in]short height);
+			[id(36)] short GetFileArray([out]VARIANT* fileArray);
+			[id(37)] short GetNetArray([in]long filePosition, [out]VARIANT* netArray);
+			[id(38)] short GetNet([in]long filePosition, [in]long netPosition, [out]BSTR* netname);
+			[id(39)] short GetCompPinArray([in]long filePosition, [in]long netPosition, [out]VARIANT* compPinArray);
+			[id(40)] short GetCompPin([in]long filePosition, [in]long netPosition, [in]long compPinPosition, [out]BSTR* compName, [out]BSTR* pinName, [out]float* x, [out]float* y);
+			[id(41)] short GeneratePinLocs();
+			[id(42)] short GetKeyword([in]short keyword, [out]BSTR* InKeyword, [out]BSTR* CCKeyword, [out]BSTR* OutKeyword, [out]short* type, [out]boolean* internal);
+			[id(43)] short GetAttribKeywordArray([out]VARIANT* keywordArray);
+			[id(44)] short GetAttribValue([in]short keyword, [out]BSTR* value);
+			[id(45)] short SetNetCurrentAttrib([in]long filePosition, [in]long netPosition);
+			[id(46)] short SetCompPinCurrentAttrib([in]long filePosition, [in]long netPosition, [in]long compPinPosition);
+			[id(47)] short GetGeometry([in]short geometryNumber, [out]BSTR* name, [out]short* geometryType, [out]short* geometryIsA);
+			[id(48)] short GetDataArray([in]short geometryNumber, [out]VARIANT* dataArray);
+			[id(49)] short GetData([in]short geometryNumber, [in]long dataPosition, [out]short* dataIsA, [out]short* graphicClass, [out]short* layer);
+			[id(50)] short GetDataInsert([in]short geometryNumber, [in]long dataPosition, [out]short* insertedGeometryNumber, [out]float* x, [out]float* y, [out]float* scale, [out]float* rotation, [out]short* mirror, [out]short* insertType, [out]BSTR* referenceName);
+			[id(51)] short SetDataCurrentAttrib([in]short geometryNumber, [in]long dataPosition);
+			[id(52)] short SetGeometryCurrentAttrib([in]short geometryNumber);
+			[id(53)] short GetDataArrayByType([in]short geometryNumber, [in]short dataType, [out]VARIANT* dataArray);
+			[id(54)] short GetDataArrayByGraphicClass([in]short geometryNumber, [in]short graphicClass, [out]VARIANT* dataArray);
+			[id(55)] short GetDataArrayByInsertType([in]short geometryNumber, [in]short insertType, [out]VARIANT* dataArray);
+			[id(56)] short GetDataPolyStruct([in]short geometryNumber, [in]long dataPosition, [out]VARIANT* polyArray);
+			[id(57)] short GetDataPoly([in]short geometryNumber, [in]long dataPosition, [in]long polyPosition, [out]short* widthIndex, [out]boolean* filled, [out]boolean* closed, [out]boolean* voidPoly, [out]VARIANT* pointArray);
+			[id(58)] short GetDataPolyPoint([in]short geometryNumber, [in]long dataPosition, [in]long polyPosition, [in]long pointPosition, [out]float* x, [out]float* y, [out]float* bulgeNumber);
+			[id(59)] short DrawCross([in]double x, [in]double y);
+			[id(60)] short GetKeywordIndex([in]BSTR keywordString, [out]short* keyword);
+			[id(61)] short SetSelectedDataCurrentAttrib();
+			[id(62)] short SetAttribValue([in]short keyword, [in]BSTR value, [in]short overwriteMethod);
+			[id(63)] short SetAttribValueOnSelected([in]short keyword, [in]BSTR value, [in]short overwriteMethod);
+			[id(64)] short GetGeometryArrayByType([in]short geometryType, [out]VARIANT* geometryArray);
+			[id(65)] short GetDocumentArray([out]VARIANT* documentArray);
+			[id(66)] short GetDocument([in]long documentPosition, [out]BSTR* name);
+			[id(67)] short ActivateDocument([in]long documentPosition);
+			[id(68)] short GetDRCArray([in]long filePosition, [out]VARIANT* drcArray);
+			[id(69)] short GetDRC([in]long filePosition, [in]long drcPosition, [out]BSTR* string, [out]double* x, [out]double* y, [out]short* failureRange, [out]short* algorithmIndex, [out]short* algorithmType, [out]BSTR* comment, [out]short* drcClass);
+			[id(70)] short DeleteDRC([in]long entityNumber);
+			[id(71)] short GetActiveFile([out]long* filePosition);
+			[id(72)] short AddDrcMarker([in]long filePosition, [in]float x, [in]float y, [in]BSTR layer, [in]BSTR comment, [out]long* entityNumber);
+			[id(73)] short LockCAMCAD([in]short lockCodes);
+			[id(74)] short LoadColorSet([in]BSTR filename);
+			[id(75)] short CurrentSettings([in]short fileNumber, [in]short layerNumber);
+			[id(76)] short GetLayerArrayByType([in]short layerType, [out]VARIANT* layerArray);
+			[id(77)] short SetLayerCurrentAttrib([in]short layerNumber);
+			[id(78)] short GetViewSurface([out]short* surface);
+			[id(79)] short GetViewportCoords([out]double* left, [out]double* right, [out]double* top, [out]double* bottom);
+			[id(80), hidden] short GetFile([in]long filePosition, [out]BSTR* name, [out]short* number, [out]float* x, [out]float* y, [out]float* scale, [out]float* angle, [out]short* mirror, [out]short* type, [out]short* geometryNumber);
+			[id(81)] short GetNetCompPinData([in]long filePosition, VARIANT* array);
+			[id(82)] short GetNetViaData([in]long filePosition, [out]VARIANT* array);
+			[id(83)] short GetComponentData([in]long filePosition, [out]VARIANT* array);
+			[id(84)] short GetNetTraceData([in]long filePosition, [out]VARIANT* array);
+			[id(85)] short LoadDataFile([in]BSTR filename);
+			[id(86)] short FindVia([in]BSTR NetName, [in]double x, [in]double y, [in]double delta, [out]short* geometryNumber, [out]long* dataPosition);
+			[id(87)] short IssueCommand([in]long command);
+			[id(88)] short ShowInsertType([in]short insertType, [in]boolean On);
+			[id(89)] short ShowGraphicClass([in]short graphicClass, [in]boolean On);
+			[id(90)] short HighlightPinClear([in]BSTR comp, [in]BSTR pin);
+			[id(91)] short HighlightPinClearAll();
+			[id(92)] short GetDocumentExtents([out]double* left, [out]double* right, [out]double* top, [out]double* bottom);
+			[id(93)] short OverrideColorDRC([in]long entityNumber, [in]boolean On, [in]short red, [in]short green, [in]short blue);
+			[id(94)] short FindDRC([in]long entityNumber, [out]long* filePosition, [out]long* drcPosition);
+			[id(95)] short GetNetTraceDataByNetname([in]long filePosition, [in]BSTR netName, [out]VARIANT* array);
+			[id(96)] short GetAPIVersion([out]short* majorVersionNumber, [out]short* minorVersionNumber);
+			[id(97)] short OverrideColorData([in]short geometryNumber, [in]long dataPosition, [in]boolean On, [in]short red, [in]short green, [in]short blue);
+			[id(98)] short Import([in]short fileType, [in]BSTR filenames, [in]BSTR formatString);
+			[id(100)] short ListConstants([in]short list, [out]VARIANT* array);
+			[id(101)] short AutoRedraw([in]boolean On);
+			[id(102)] short GetZoomLevel([out]double* zoomLevel);
+			[id(103)] short SetZoomLevel([in]double zoomLevel);
+			[id(104)] short SetLayerType([in]short layerNumber, [in]short layerType);
+			[id(105), hidden] short SetLayerShow([in]short layerNumber, [in]short show);
+			[id(106)] short SetLayerMirror([in]short layerNumber, [in]short mirrorLayerNumber);
+			[id(107)] short SetLayerColor([in]short layerNumber, [in]short red, [in]short green, [in]short blue);
+			[id(108)] short FindLayer([in]BSTR layerName, [out]short* layerNumber);
+			[id(109)] short SetFileShow([in]long filePosition, [in]boolean show);
+			[id(110)] short GetPageUnits([out]BSTR* units);
+			[id(111)] short SetDataInsertInserttype([in]short geometryNumber, [in]long dataPosition, [in]short inserttype);
+			[id(112)] short FindNet([in]long filePosition, [in]BSTR netname, [out]long* netPosition);
+			[id(113)] short GetPlacementData([in]long filePosition, [in]short insertType, [out]VARIANT* array);
+			[id(114)] short GetActiveDocument([out]long* documentPosition);
+			[id(115)] short GetFile2([in]long filePosition, [out]BSTR* name, [out]short* number, [out]boolean* On, [out]float* x, [out]float* y, [out]float* scale, [out]float* angle, [out]short* mirror, [out]short* type, [out]short* geometryNumber);
+			[id(116), hidden] short GetLayer2([in]short layerNumber, [out]BSTR* name, [out]short* layerType, [out]short* show, [out]short* mirrorLayerNumber, [out]BSTR* comment, [out]short* red, [out]short* green, [out]short* blue);
+			[id(117), hidden] short GetLayer([in]short layerNumber, [out]BSTR* name, [out]short* layerType, [out]short* show, [out]BSTR* comment);
+			[id(118)] short SetLayerWorldView([in]short layerNumber, [in]boolean show);
+			[id(119)] short GetLayer3([in]short layerNumber, [out]BSTR* name, [out]short* layerType, [out]short* show, [out]short* mirrorLayerNumber, [out]BSTR* comment, [out]short* red, [out]short* green, [out]short* blue, [out]short* worldView);
+			[id(120)] short HideData([in]short geometryNumber, [in]long dataPosition, [in]boolean Hide);
+			[id(121)] short HideAll([in]boolean Hide);
+			[id(122)] short FindDataByRefname([in]BSTR refname, [out]short* geometryNumber, [out]long* dataPosition);
+			[id(123)] short HideInserts([in]short inserttype, [in]boolean Hide);
+			[id(124)] short HideNetsAll([in]boolean Hide);
+			[id(125)] short HideNet([in]BSTR netname, [in]boolean Hide);
+			[id(126)] short SetPageSize([in]double xmin, [in]double xmax, [in]double ymin, [in]double ymax);
+			[id(127)] short SaveDataFileAs([in]BSTR filename);
+			[id(129)] short GetGeometryData([in]short geometryType, [out]VARIANT* array);
+			[id(130)] short SetFileRotation([in]long filePosition, [in]double rotation);
+			[id(131)] short UserCoord();
+			[id(132)] short TurnOffResponseByID([in]BSTR programID);
+			[id(133)] short GenerateMarker([in]short shape, [in]double sizeA, [in]double sizeB, [in]double penWidth);
+			[id(134)] short APIDocument([in]long documentPosition);
+			[id(135)] short NetLengthPoly([in]short geometryNumber, [in]long dataPosition, [out]double* length);
+			[id(136)] short NetLengthSegment([in]double x1, [in]double y1, [in]double x2, [in]double y2, [in]double bulge, [out]double* length);
+			[id(137)] short NetLengthNet([in]long filePosition, [in]BSTR NetName, [out]double* length);
+			[id(138)] short NetLengthPins([in]long filePosition, [in]BSTR comp1, [in]BSTR pin1, [in]BSTR comp2, [in]BSTR pin2, [out]double* length);
+			[id(139)] short LayersUsed([out]VARIANT* array);
+			[id(140)] short GetSelectedArray([out]VARIANT* selectedArray);
+			[id(141)] short GetSelected([in]long selectedPosition, [out]short* geometryNumber, [out]long* dataPosition);
+			[id(142)] short GetSubSelectLevel([out]short* subSelectLevel);
+			[id(143)] short GetSubSelect([in]short subSelectLevel, [out]short* geometryNumber, [out]long* dataPosition, [out]float* insert_x, [out]float* insert_y, [out]float* scale, [out]float* rotation, [out]short* mirror, [out]short* layer);
+			[id(144)] short NetLengthNetManhattan([in]long filePosition, [in]BSTR NetName, [out]double* length);
+			[id(145)] short NetLengthPinsManhattan([in]long filePosition, [in]BSTR comp1, [in]BSTR pin1, [in]BSTR comp2, [in]BSTR pin2, [out]double* length);
+			[id(146)] short GetNetData([in]long filePosition, [out]VARIANT* array);
+			[id(147)] short HideDrawings([in]boolean Hide);
+			[id(148)] short GetFilePlaced([in]long filePosition, [out]boolean* placed);
+			[id(149)] short HighlightPinsOfANet([in]BSTR netName, [in]short red, [in]short green, [in]short blue);
+			[id(150)] short HighlightPinsOfANetClear([in]BSTR netName);
+			[id(151)] short OverrideColorByInsertType([in]short insertType, [in]boolean On, [in]short red, [in]short green, [in]short blue);
+			[id(152)] short LayersUsedByNet([in]long filePosition, [in]BSTR netName, [out]VARIANT* array);
+			[id(153)] short Export([in]short fileType, [in]BSTR filename);
+			[id(154)] short OverrideColorByGeometry([in]short geometryNumber, [in]boolean On, [in]short red, [in]short green, [in]short blue);
+			[id(155), hidden] short TempAddInsert([in]long filePosition, [in]short geometryNumber, [in]BSTR refName, [in]short insertType, [in]double x, [in]double y, [in]double rotation, [in]short mirror, [in]short layerNumber, [out]long* dataPosition);
+			[id(156)] short SetGeometryName([in]short geometryNumber, [in]BSTR name);
+			[id(157)] short dfmFlatten([in]short geometryNumber, [in]short layerNumber, [in]short textMode);
+			[id(158)] short SetFileGeometry([in]long filePosition, [in]short geometryNumber);
+			[id(159)] short dfmDistanceCheck([in]short geometryNumber, [in]double acceptableDistance, [in]double marginalDistance, [in]double criticalDistance, [in]BSTR algName, [in]short algType, [in]BSTR layerSuffix, [in]BOOL allowAttribOverride, [in]BOOL canTouch);
+			[id(160), hidden] short License([in]short licenseNumber, [in]long accessCode);
+			[id(161)] short dfmDistanceCheckDiffNets([in]short geometryNumber, [in]double acceptableDistance, [in]double marginalDistance, [in]double criticalDistance, [in]BSTR algName, [in]short algType, [in]BSTR layerSuffix, [in]BOOL allowAttribOverride, [in]BOOL canTouch);
+			[id(162)] short dfmDistanceCheckByClass([in]short geometryNumber, [in]short class1, [in]short class2, [in]double acceptableDistance, [in]double marginalDistance, [in]double criticalDistance, [in]BSTR algName, [in]short algType, [in]BSTR layerSuffix, [in]BOOL allowAttribOverride, [in]BOOL canTouch);
+			[id(163)] short CreateAperture([in]BSTR name, [in]short shape, [in]double sizeA, [in]double sizeB, [in]double xOffset, [in]double yOffset, [in]double rotation, [in]short dcode, [out]short* widthIndex, [out]short* geometryNumber);
+			[id(164)] short CreateLayer([in]BSTR name, [out]short* layerNumber);
+			[id(165)] short UserCoord2([in]boolean On);
+			[id(166)] short GetLayerStackup([in]short layerNumber, [out]short* electrical, [out]short* physical, [out]short* artwork);
+			[id(167)] short dfmCreateDFxOutline([in]short geometryNumber, [in]short algorithm, [in]boolean Overwrite);
+			[id(168)] short SetLayerVisible([in]short layerNumber, [in]boolean visible);
+			[id(169)] short SetLayerEditable([in]short layerNumber, [in]boolean editable);
+			[id(170)] short GetLayerVisible([in]short layerNumber, [out]boolean* visible);
+			[id(171)] short GetLayerEditable([in]short layerNumber, [out]boolean* editable);
+			[id(172)] short GetCentroidData([in]long filePosition, [in]short insertType, [out]VARIANT* array);
+			[id(173)] short GetGeometryExtents([in]short geometryNumber, [out]double* left, [out]double* right, [out]double* top, [out]double* bottom);
+			[id(174)] short HideCAMCAD([in]boolean Hide);
+			[id(175)] short SplashMessage([in]BSTR message);
+			[id(176)] short SplashProgressRange([in]short range);
+			[id(177)] short SplashProgressPosition([in]short position);
+			[id(178)] short DeleteGeometry([in]short geometryNumber);
+			[id(179)] short dfmFlattenByInserttypes([in]short geometryNumber, [in]short layerArray, [in]short inserttype1, [in]short inserttype2);
+			[id(180)] short dfmComponentShadow([in]long filePosition, [in]double accLeftMargin, [in]double accRightMargin, [in]double accTopMargin, [in]double accBottomMargin, [in]double marLeftMargin, [in]double marRightMargin, [in]double marTopMargin, [in]double marBottomMargin, [in]double crtLeftMargin, [in]double crtRightMargin, [in]double crtTopMargin, [in]double crtBottomMargin);
+			[id(181)] short dfmDistanceCheckByInserttype([in]short geometryNumber, [in]short inserttype1, [in]short inserttype2, [in]double acceptableDistance, [in]double marginalDistance, [in]double criticalDistance, [in]BSTR algName, [in]short algType, [in]BSTR layerSuffix, [in]boolean allowAttribOverride, [in]boolean canTouch);
+			[id(182)] short dfmDistanceCheckClassInserttype([in]short geometryNumber, [in]short class1, [in]short inserttype2, [in]double acceptableDistance, [in]double marginalDistance, [in]double criticalDistance, [in]BSTR algName, [in]short algType, [in]BSTR layerSuffix, [in]boolean allowAttribOverride, [in]boolean canTouch);
+			[id(183)] short MakeMaufacturingRefDes();
+			[id(184)] short ExportDXF([in]BSTR filename, [in]double realWidth, [in]boolean explode, [in]boolean exportHidden, [in]boolean addLineEnds);
+			[id(185)] short CheckLicense([in]short licenseNumber, [out]boolean* allowed);
+			[id(186)] short CheckImportFormatLicense([in]short format, [out]boolean* allowed);
+			[id(187)] short dfmCreateFlattenGeometry([in]long filePosition, [out]short* geometryNumber);
+			[id(188)] short CreateKeyword(BSTR name, short valueType, short group, short* keyword);
+			[id(189)] short RemoveAttrib(short keyword);
+			[id(190)] short GetDRCAlgorithm(short algorithmNumber, BSTR* algorithmName);
+			[id(191)] short FindData(long entityNumber, short* geometryNumber, long* dataPosition);
+			[id(192)] short GetDRCMeasure(long filePosition, long drcPosition, long* entity1, short* type1, double* x1, double* y1, long* entity2, short* type2, double* x2, double* y2);
+			[id(193)] short InitRealPartInfo();
+			[id(194)] short dfmDistanceCheckTwoNets(short geometryNumber, BSTR netname1, BSTR netname2, double acceptableDistance, double marginalDistance, double criticalDistance, BSTR algName, short algType, BSTR layerSuffix, boolean allowAttribOverride, boolean canTouch);
+			[id(195)] short dfmDistanceCheckByAttrib(short geometryNumber, BSTR keyword, BSTR value1, BSTR value2, double acceptableDistance, double marginalDistance, double criticalDistance, BSTR algName, short algType);
+			[id(196)] short dfmSetMaxErrorsForTest(short maxErrors);
+			[id(197)] short dfmHaltTest();
+			[id(198)] short GetTypeArray(long filePosition, VARIANT* typeArray);
+			[id(199)] short GetType(long filePosition, long typePosition, BSTR* name, short* geometryNumber);
+			[id(200)] short SetTypeCurrentAttrib(long filePosition, long typePosition);
+			[id(202)] short AddInsert(short geometryNumber, short insertedGeometryNumber, BSTR refName, short insertType, double x, double y, double rotation, short mirror, short layerNumber, long* dataPosition);
+			[id(203)] short AddPolyEntity(short geometryNumber, short layerNumber, long* dataPosition);
+			[id(204)] short AddPoly(short geometryNumber, long dataPosition, short widthIndex, long* polyPosition);
+			[id(205)] short AddPolyPnt(short geometryNumber, long dataPosition, long polyPosition, double x, double y, double bulge, long* pntPosition);
+			[id(206)] short SetAttribVisible(short keyword, boolean visible, double x, double y, double height, double width, double angle, short layer, short penWidthIndex, boolean proportional, boolean neverMirror);
+			[id(207)] short FindCompPin(long filePosition, long netPosition, BSTR comp, BSTR pin, long* cpPosition);
+			[id(208)] short GetNetCompPinData2(long filePosition, VARIANT* array);
+			[id(209)] short CopyFile(long filePosition, BSTR newFileName, long* newFilePosition);
+			[id(210)] short SetFileMirror(long filePosition, boolean mirror);
+			[id(211)] short DeleteEntity(short geometryNumber, long dataPosition);
+			[id(212)] short RestructureFileAroundOrigin(long filePosition);
+			[id(213)] short GetPlacementData2(long filePosition, short insertType, VARIANT* array);
+			[id(214)] short GetDRC2(long filePosition, long drcPosition, BSTR* string, double* x, double* y, short* failureRange, short* algorithmIndex, short* algorithmType, long* insertEntity, BSTR* comment, short* drcClass);
+			[id(215)] short GetDRCNets(long filePosition, long drcPosition, VARIANT* netnameArray);
+			[id(216)] short DeleteByLayer(short layerNumber, boolean RemoveLayerFromLayerList);
+			[id(217)] short DeleteByInserttype(short geometryNumber, short inserttype);
+			[id(218)] short DeleteByGraphicClass(short geometryNumber, short graphicClass);
+			[id(219), hidden] short SplashMin(); 
+			[id(220)] short SetFileLocation(long filePosition, double x, double y);
+			[id(221)] short AutoBoardOrigin(long filePosition, boolean Left, boolean Bottom);
+			[id(222)] short ClearAllDRCs(); 
+			[id(223)] short OEMLicense([in]BSTR OEMName, [in]short licenseNumber, [in]long accessCode);
+			//}}AFX_ODL_METHOD				   
+//			[id(99)] short Blank1();
+//			[id(128)] short SetAPILevel(short code);
+//			[id(201)] short dfmAcidTraps(short geometryNumber, double acceptableAngle, double marginalAngle, double criticalAngle, BSTR layerSuffix);
+			[id(224), helpstring("method SetCentroid")] SHORT SetCentroid(SHORT geometryNumber, FLOAT x, FLOAT y, FLOAT rotation, SHORT overwrite);
+			[id(225), helpstring("method AutoGenerateCentroid")] SHORT AutoGenerateCentroid(SHORT geometryNumber, SHORT method, SHORT overwrite);
+			[id(226), helpstring("method GetCentroid")] SHORT GetCentroid(SHORT geometryNumber, FLOAT* x, FLOAT* y, FLOAT* rotation);
+         [id(227), helpstring("method ExportGENCAD")] SHORT ExportGENCAD(BSTR filename);
+			[id(228)] short GetSchematicViewArray([out]VARIANT* fileArray);
+			[id(229)] short GetSchematicSheetArray([in]long filePosition, [out]VARIANT* sheetArray);
+			[id(230)] short GetLogicSymbolPlacementData(short geometryNumber, VARIANT* array);
+			[id(231)] short GetSchematicNetData(long filePosition, VARIANT* array);
+			[id(232)] short SetDataPolyFilled([in]short geometryNumber, [in]long dataPosition, [in]long polyPosition, [in]short filled);
+			[id(233)] short SetDataPolyClosed([in]short geometryNumber, [in]long dataPosition, [in]long polyPosition, [in]short closed);
+			[id(234)] short SetDataPolyVoid([in]short geometryNumber, [in]long dataPosition, [in]long polyPosition, [in]short voidPoly);
+			[id(235)] short SetDataPolyWidthIndex([in]short geometryNumber, [in]long dataPosition, [in]long polyPosition, [in]short widthIndex);
+			[id(236)] short SetDataGraphicClass([in]short geometryNumber, [in]long dataPosition, [in]short graphicClass);
+			[id(237)] short EditGeometry([in]short geometryNumber);
+			[id(238)] short OpenCadFile(BSTR filename);
+         [id(239)] short SetSchematicNetCrossProbe(BOOL On);
+         [id(240)] short SetSchematicComponentCrossProbe(BOOL On);
+         [id(241)] short SetSchematicSheet(long filePosition, short geometryNumber);
+         [id(242)] short LoadSchematicNetCrossReference(LPCTSTR filename);
+         [id(243)] short LoadSchematicComponentCrossReference(LPCTSTR filename);
+         [id(244)] short CrossProbeSchematicComponent(LPCTSTR compName);
+         [id(245)] short CrossProbeSchematicNet(LPCTSTR netName);
+			[id(246)] short GetCAMCADVersion(BSTR* ccVersion);
+			[id(247)] short DeleteGenericGraphic(boolean components, boolean graphics);
+			[id(248)] short DeleteTracesVias(short traces, short vias);
+			[id(249)] short OpenNewDocument();
+			[id(250)] short LoadSTDLicenses();
+			[id(251), hidden] short SetWindowName(LPCTSTR name);
+			[id(252)] short SaveCompressedDataFileAs([in]BSTR filename);
+			[id(253)] short SendLayerToBack(short layerNumber);
+			[id(254)] short BringLayerToFront(short layerNumber);
+			[id(255), hidden] short SetWindowIcon(LPCTSTR iconFilename, short icon);
+			[id(256), hidden] short GetRealPartData(BSTR* data);
+			[id(257), hidden] short SetRealPartData(LPCTSTR data);
+			[id(258)] short GenerateCompCentroid(long filePosition, short method);
+			[id(259)] SHORT GetNetCompPinData3([in] LONG filePosition, [out] VARIANT* array);
+			[id(260)] short ExportFormat([in]short fileType, [in]BSTR filename, [in]BSTR formatString);
+			[id(261)] short GetProbeData([in]long filePosition, [out]VARIANT* array);
+			[id(262), hidden] short SortPanelBoards([in]long filePosition, [in]short startPoint, [in]short sortStyle, [in]short tolerancePercentage);
+			[id(263)] short LockDocument([in]long documentPosition, [in]short lockDoc, [in]BSTR userName);
+			[id(264)] short GetDataExtents([in]short intGeometryNumber, [in]long lngDataPosition, [out]double* dblXMin, [out]double* dblXMax, [out]double* dblYMin, [out]double* dblYMax);
+			[id(265)] short AddRealPartDrcMarker([in]long filePosition, [in]BSTR refDes, [in]BSTR packageName, [in]BSTR algorithmName, [in]float x, [in]float y, [in]short failureRange, [in]short priority, [in]BSTR comment, [out]long* entityNumber);
+			[id(266)] short RemoveRealPartDrcMarker([in]long filePosition, [in]BSTR refDes);
+			[id(267)] short DeleteOccuranceOfKeyword(short keyword);
+			[id(268)] short GetProjectPathAPI(BSTR* ProjectPath);
+         [id(269)] short Validate(long nLicenseToken, long* pKey);
+	};	   
+
+	//  Class information for API
+ 
+	[ uuid(C3DB3A2D-0B71-11D2-BA40-0080ADB36DBB) ]
+	coclass Application
+	{
+		[default] dispinterface IAPI;
+	};
+
+	//{{AFX_APPEND_ODL}}
+	//}}AFX_APPEND_ODL}}
+	//  Primary dispatch interface for DFM
+		
+	[ uuid(DAD9B785-A34F-4786-8111-9E6B9DDA6DC1) ]
+	dispinterface IDFM
+	{
+		properties:
+		[id(1), helpstring("property maxErrorsPerTest")] SHORT maxErrorsPerTest;
+		methods:
+		[id(2), helpstring("method CreateFlattenGeometry")] SHORT CreateFlattenGeometry(LONG filePosition, SHORT* geometryNumber);
+		[id(3), helpstring("method Flatten")] SHORT Flatten(SHORT geometryNumber, SHORT layerNumber, SHORT TopLevelOnly);
+		[id(4), helpstring("method FlattenByGraphicClass")] SHORT FlattenByGraphicClass(SHORT geometryNumber, SHORT layerNumber, SHORT graphicClass, SHORT TopLevelOnly);
+		[id(5), helpstring("method FlattenByInserttype")] SHORT FlattenByInserttype(SHORT geometryNumber, SHORT layerNumber, SHORT inserttype, SHORT InsertPointOnly, SHORT surface);
+		[id(6), helpstring("method FlattenByAttrib")] SHORT FlattenByAttrib(SHORT geometryNumber, SHORT layerNumber, BSTR attribKeyword, BSTR attribValue, SHORT comparisonType, SHORT inserttype, SHORT InsertPointOnly, SHORT surface);
+		[id(7), helpstring("method FilterGeometry")] SHORT FilterGeometry(SHORT geometryNumber, BSTR keyword, BSTR value, SHORT comparisonType);
+		[id(8), helpstring("method DistanceCheck: Depricated [Use DistanceCheck2]")] SHORT DistanceCheck(SHORT geometryNumber1, SHORT geometryNumber2, DOUBLE marginalDistance, DOUBLE criticalDistance, BSTR algName, SHORT algType, SHORT CanTouch, SHORT SkipSameNets, SHORT OneDRCPerNetPair);
+		[id(9), helpstring("method DistanceCheckDiffNets")] SHORT DistanceCheckDiffNets(SHORT geometryNumber, DOUBLE marginalDistance, DOUBLE criticalDistance, BSTR algName, SHORT algType, SHORT CanTouch);
+		[id(10), helpstring("method DistanceCheckTwoNets")] SHORT DistanceCheckTwoNets(SHORT geometryNumber, BSTR netname1, BSTR netname2, DOUBLE marginalDistance, DOUBLE criticalDistance, BSTR algName, SHORT algType, SHORT CanTouch);
+		[id(11), helpstring("method GenerateDFxOutlines")] SHORT GenerateDFxOutlines(void);
+		[id(12), helpstring("method ComponentShadow")] SHORT ComponentShadow(LONG filePosition, DOUBLE marLeftMargin, DOUBLE marRightMargin, DOUBLE marTopMargin, DOUBLE marBottomMargin, DOUBLE crtLeftMargin, DOUBLE crtRightMargin, DOUBLE crtTopMargin, DOUBLE crtBottomMargin);
+		[id(13), helpstring("method PanelDimensions")] SHORT PanelDimensions(LONG filePosition, DOUBLE minWidth, DOUBLE maxWidth, DOUBLE minLength, DOUBLE maxLength, BSTR algName);
+		[id(14), helpstring("method PanelLengthToWidthRatio")] SHORT PanelLengthToWidthRatio(LONG filePosition, DOUBLE minRatio, BSTR algName);
+		[id(15), helpstring("method ClearanceToPanelEdge")] SHORT ClearanceToPanelEdge(SHORT geometryNumber, DOUBLE minRail, DOUBLE minNonRail, BSTR algName);
+		[id(16), helpstring("method SMDSoldermaskClearance")] SHORT SMDSoldermaskClearance(SHORT pinGeometryNumber, SHORT soldermaskGeometryNumber, DOUBLE minXMargin, DOUBLE minYMargin, BSTR algName);
+		[id(17), helpstring("method ItemsInCorners")] SHORT ItemsInCorners(SHORT geometryNumber, DOUBLE minRail, DOUBLE maxRail, DOUBLE minNonRail, DOUBLE maxNonRail, SHORT minCorners, BSTR algName, SHORT surface);
+		[id(18), helpstring("method ComponentFlushWithOutline")] SHORT ComponentFlushWithOutline(SHORT geometryNumber, DOUBLE maxDist, BSTR algName);
+		[id(19), helpstring("method TestpointsPerNet")] SHORT TestpointsPerNet(SHORT geometryNumber, SHORT minTestpoints, BSTR algName);
+		[id(20), helpstring("method ProcessSolderMask")] SHORT ProcessSolderMask(SHORT soldermaskGeometryNumber, SHORT copperGeometryNumber);
+		[id(21), helpstring("method ViaUnderPart")] SHORT ViaUnderPart(SHORT viaGeometryNumber, SHORT compGeometryNumber, BSTR algName);
+		[id(22), helpstring("method ViaPadSize")] SHORT ViaPadSize(LONG filePosition, DOUBLE topMinSize, DOUBLE topMaxSize, DOUBLE bottomMinSize, DOUBLE bottomMaxSize, DOUBLE ignoreHoleSize, BSTR algName);
+		[id(23), helpstring("method ViaHoleSize")] SHORT ViaHoleSize(LONG filePosition, DOUBLE minSize, DOUBLE maxSize, DOUBLE ignoreHoleSize, BSTR algName);
+		[id(24), helpstring("method ExposedTestpointPadSize")] SHORT ExposedTestpointPadSize(SHORT geometryNumber, DOUBLE minSize, DOUBLE maxSize, BSTR algName);
+		[id(25), helpstring("method ThruHolePadShapes")] SHORT ThruHolePadShapes(LONG filePosition, SHORT topAll, SHORT bottomAll, SHORT topOne, SHORT bottomOne, BSTR algName);
+		[id(26), helpstring("method RouteTraceWidthMinimum")] SHORT RouteTraceWidthMinimum(SHORT geometryNumber, DOUBLE marginal, DOUBLE critical, BSTR excludeNets, BSTR algName);
+		[id(27), helpstring("method AllowableComponentOrientation")] SHORT AllowableComponentOrientation(LONG filePosition, SHORT top, SHORT horizontal, BSTR algName);
+		[id(28), helpstring("method BoardThicknessToDrillDiameter")] SHORT BoardThicknessToDrillDiameter(LONG filePosition, DOUBLE maxRatio, BSTR algName);
+		[id(29), helpstring("method GenerateEtchBlockers")] SHORT GenerateEtchBlockers(DOUBLE maxPinPitch, SHORT* topLayerNumber, SHORT* bottomLayerNumber);
+		[id(30), helpstring("method AnnularRing")] SHORT AnnularRing(LONG filePosition, DOUBLE padTop, DOUBLE padBottom, DOUBLE soldTop, DOUBLE soldBottom, BSTR algName);
+		[id(31), helpstring("method DistanceCheck2")] SHORT DistanceCheck2(SHORT geometryNumber1, SHORT geometryNumber2, DOUBLE marginalDistance, DOUBLE criticalDistance, BSTR algName, SHORT algType, SHORT CanTouch, SHORT SkipSameNets, SHORT OneDRCPerNetPair, SHORT SkipSameComponents);
+		[id(32), helpstring("method GerberThermalBarrelPlugCheck")] SHORT GerberThermalBarrelPlugCheck(LONG filePosition);
+		[id(33), helpstring("method Pin1Orientation")] SHORT Pin1Orientation(LONG filePosition, SHORT top, SHORT bottom, SHORT thruHole, SHORT smd, SHORT ignoreCount);
+		[id(34), helpstring("method TestPadDensityCheck")] SHORT TestPadDensityCheck(LONG filePosition, SHORT marginal, SHORT critical, DOUBLE gridSize, SHORT addTPDensityAttrib);
+		[id(35), helpstring("method ComponentNotAllowedPerSurface")] SHORT ComponentNotAllowedPerSurface(LONG filePosition, SHORT top, SHORT bottom, LPCTSTR attribKeyword, LPCTSTR attribValue);
+		[id(36), helpstring("method ComponentHeight")] SHORT ComponentHeight(LONG filePosition, SHORT top, SHORT bottom, LPCTSTR componentHeightAttributeKeyword, DOUBLE topMarginalHeight, DOUBLE topCriticalHeight, DOUBLE bottomMarginalHeight, DOUBLE bottomCriticalHeight);
+		[id(37), helpstring("Unions all polies that touch.")] SHORT CombinePolies(SHORT geometryNumber);
+	};
+
+	//  Class information for DFM
+
+	[ uuid(02CAD7F0-A311-4157-ACFC-A6666C55FF19) ]
+	coclass DFM
+	{
+		[default] dispinterface IDFM;
+	};
+	//  Primary dispatch interface for DFTFacade
+		
+	[ uuid(D3B6EDD0-EE9D-4978-9C20-E12D2BB762EB) ]
+	dispinterface IDFTFacade
+	{
+		properties:
+		methods:
+		[id(1), helpstring("method GetCCFilePath")] BSTR GetCCFilePath(void);
+		[id(2), helpstring("method RemoveToolstacks")] HRESULT RemoveToolstacks(void);
+		[id(3), helpstring("method InsertToolstacks")] HRESULT InsertToolstacks( BSTR bstrToolstacksXML);
+		[id(4), helpstring("method EditToolstack")] HRESULT EditToolstack( BSTR bstrToolstacksXML);
+		[id(5), helpstring("method DeleteToolstack")] HRESULT DeleteToolstack( BSTR bstrToolstack);
+		[id(6), helpstring("method AddToolstack")] HRESULT AddToolstack(BSTR bstrToolstack);
+		[id(7), helpstring("method CalculateBoard2Pin")] HRESULT CalcBoard2Pin(long bOverwrite);
+		[id(8), helpstring("method CalculateComp2Pin")] HRESULT CalcComp2Pin(long bOverwrite);
+		[id(9), helpstring("method CalculateSMaskClear")] HRESULT CalcSMaskClear(long bOverwrite);
+		[id(10),helpstring("method CalculatePadSize")] HRESULT CalcPadSize(long bOverwrite);
+		[id(11), helpstring("method CalculateMinMetal")] HRESULT CalcMinMetal(long bOverwrite);
+		[id(12), helpstring("method SetPinTBX")] HRESULT SetPinTBX(long bOverwrite);
+		[id(13), helpstring("method CalculatePadLocation")] HRESULT CalcPadLocation(long bOverwrite);
+		[id(14), helpstring("method CalcCompCenterXY")] HRESULT CalcCompCenterXY(long bOverwrite);
+		[id(15), helpstring("method SetCompTB")] HRESULT SetCompTB(long bOverwrite);
+		[id(16), helpstring("method trash")] HRESULT trash(BSTR test);
+		[id(17), helpstring("method InsertToolstacks2")] HRESULT InsertToolstacks2(BSTR* bstrToolstacks);
+	};
+
+	//  Class information for DFTFacade
+
+	[ uuid(6AE201D4-8B7D-49c4-955D-450A564B26BE) ]
+	coclass DFTFacade
+	{
+		[default] dispinterface IDFTFacade;
+	};
+};

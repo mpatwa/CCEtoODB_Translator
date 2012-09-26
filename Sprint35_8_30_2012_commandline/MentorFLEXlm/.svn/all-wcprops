@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/sdd/sdd/!svn/ver/25607/trunk/CCASM/Source/CAMCAD/MentorFLEXlm
+END
+mgls_licensing.h
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/sdd/sdd/!svn/ver/25607/trunk/CCASM/Source/CAMCAD/MentorFLEXlm/mgls_licensing.h
+END
+mgls_client.h
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/sdd/sdd/!svn/ver/13349/trunk/CCASM/Source/CAMCAD/MentorFLEXlm/mgls_client.h
+END
+mgls.lib
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/sdd/sdd/!svn/ver/25607/trunk/CCASM/Source/CAMCAD/MentorFLEXlm/mgls.lib
+END
+mgls_client_defs.h
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/sdd/sdd/!svn/ver/25607/trunk/CCASM/Source/CAMCAD/MentorFLEXlm/mgls_client_defs.h
+END
+mglsmt.lib
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/sdd/sdd/!svn/ver/25607/trunk/CCASM/Source/CAMCAD/MentorFLEXlm/mglsmt.lib
+END
+core_licensing.h
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/sdd/sdd/!svn/ver/13349/trunk/CCASM/Source/CAMCAD/MentorFLEXlm/core_licensing.h
+END
+mgls_client_extern.h
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/sdd/sdd/!svn/ver/25607/trunk/CCASM/Source/CAMCAD/MentorFLEXlm/mgls_client_extern.h
+END

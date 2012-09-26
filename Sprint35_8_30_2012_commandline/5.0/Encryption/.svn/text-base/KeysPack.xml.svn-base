@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<KeysPackData>
+  <reference uri="Mentor Graphics KeysPack Application"/>
+  <VarName>key_data</VarName>
+  <KeyData>
+    <name>CczKey1</name>
+    <format>binary</format>
+    <ValueFile>cczkey1.bin</ValueFile>
+  </KeyData>
+</KeysPackData>

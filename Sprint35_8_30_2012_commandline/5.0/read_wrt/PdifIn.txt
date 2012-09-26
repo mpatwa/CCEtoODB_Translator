@@ -1,0 +1,43 @@
+correct_viapadname() renames via geometries form "1" and deletes old geometry
+
+
+	The theory is			     
+	1. All blocks are global
+	2. A geometry file must be loaded first - create board is the file 
+	3. All file headers are check in the first line for file type and must follow Mentor spec
+	4. All create views are also files
+	5. Create Panels are also files
+							 												 
+																	  
+   What's missing 			 
+	- Text justificstion
+	- LAY_MIRROR_ONLY		this are layers which are mirrored special
+	  LAY_MIRROR_NEVER
+   - all attributes
+	- Component names from create_comp and cmp file.
+	- Wire file.
+
+	All blocks have -1 filenumber, because files, blocks and references can come in any order 
+	and different files.
+
+
+   pcad.c
+   Converts P-Cad PDIF files -> laydbase files.
+
+   Padstack definition per PCAD
+   Pt 0        =  always via, not used in Compdef. Always called PADn or n.
+   Pt 1 - 24   =  through hole pins
+   Pt 25 - 50  =  Smd pins (not used in Parts)
+   Pt 51 - 99  =  Vias not used in parts. Always called PADn or n.
+   pt 100 - 999=  User assigned pin types which are smd.
+
+   TEXTCORRECT:   Pcad text 100mil is actually 75 mil height
+
+   Binary PCB database header version number
+   Database Version  Product Version
+   1.02              AD 1.0
+   1.02L             AD 2.0
+   1.03              MD 4.0
+   1.04              MD 4.5 - 5.1
+   1.07              Premier PCV 1.0 - 1.2
+   2.08              MD 6.0 - 6.06

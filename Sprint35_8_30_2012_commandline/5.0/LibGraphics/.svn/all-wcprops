@@ -1,0 +1,83 @@
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/sdd/sdd/!svn/ver/31931/branches/CCEtoODBPP/_branches/private/Miten/Sprint35_8_30_2012_commandline/5.0/LibGraphics
+END
+PolynomialRoots.h
+K 25
+svn:wc:ra_dav:version-url
+V 136
+/svn/sdd/sdd/!svn/ver/31931/branches/CCEtoODBPP/_branches/private/Miten/Sprint35_8_30_2012_commandline/5.0/LibGraphics/PolynomialRoots.h
+END
+IntersectLineToLine.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 142
+/svn/sdd/sdd/!svn/ver/31931/branches/CCEtoODBPP/_branches/private/Miten/Sprint35_8_30_2012_commandline/5.0/LibGraphics/IntersectLineToLine.cpp
+END
+RotateCoord.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 134
+/svn/sdd/sdd/!svn/ver/31931/branches/CCEtoODBPP/_branches/private/Miten/Sprint35_8_30_2012_commandline/5.0/LibGraphics/RotateCoord.cpp
+END
+SetEpsilon.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 133
+/svn/sdd/sdd/!svn/ver/31931/branches/CCEtoODBPP/_branches/private/Miten/Sprint35_8_30_2012_commandline/5.0/LibGraphics/SetEpsilon.cpp
+END
+IntersectCircleToCircle.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 146
+/svn/sdd/sdd/!svn/ver/31931/branches/CCEtoODBPP/_branches/private/Miten/Sprint35_8_30_2012_commandline/5.0/LibGraphics/IntersectCircleToCircle.cpp
+END
+Diff0.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/svn/sdd/sdd/!svn/ver/31931/branches/CCEtoODBPP/_branches/private/Miten/Sprint35_8_30_2012_commandline/5.0/LibGraphics/Diff0.cpp
+END
+NormalizeAngles.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 138
+/svn/sdd/sdd/!svn/ver/31931/branches/CCEtoODBPP/_branches/private/Miten/Sprint35_8_30_2012_commandline/5.0/LibGraphics/NormalizeAngles.cpp
+END
+PolynomialRoots.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 138
+/svn/sdd/sdd/!svn/ver/31931/branches/CCEtoODBPP/_branches/private/Miten/Sprint35_8_30_2012_commandline/5.0/LibGraphics/PolynomialRoots.cpp
+END
+OrdCoord.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 131
+/svn/sdd/sdd/!svn/ver/31931/branches/CCEtoODBPP/_branches/private/Miten/Sprint35_8_30_2012_commandline/5.0/LibGraphics/OrdCoord.cpp
+END
+IsAngleBetween.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 137
+/svn/sdd/sdd/!svn/ver/31931/branches/CCEtoODBPP/_branches/private/Miten/Sprint35_8_30_2012_commandline/5.0/LibGraphics/IsAngleBetween.cpp
+END
+LibGraphics.h
+K 25
+svn:wc:ra_dav:version-url
+V 132
+/svn/sdd/sdd/!svn/ver/31931/branches/CCEtoODBPP/_branches/private/Miten/Sprint35_8_30_2012_commandline/5.0/LibGraphics/LibGraphics.h
+END
+OrdEqual.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 131
+/svn/sdd/sdd/!svn/ver/31931/branches/CCEtoODBPP/_branches/private/Miten/Sprint35_8_30_2012_commandline/5.0/LibGraphics/OrdEqual.cpp
+END
+IntersectLineToCircle.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 144
+/svn/sdd/sdd/!svn/ver/31931/branches/CCEtoODBPP/_branches/private/Miten/Sprint35_8_30_2012_commandline/5.0/LibGraphics/IntersectLineToCircle.cpp
+END

@@ -1,0 +1,103 @@
+
+
+/* this ALWAYS GENERATED file contains the IIDs and CLSIDs */
+
+/* link this file in with the server and any clients */
+
+
+ /* File created by MIDL compiler version 7.00.0500 */
+/* at Mon Jul 09 14:00:38 2012
+ */
+/* Compiler settings for .\Camcad.odl:
+    Oicf, W1, Zp8, env=Win32 (32b run)
+    protocol : dce , ms_ext, c_ext, robust
+    error checks: allocation ref bounds_check enum stub_data 
+    VC __declspec() decoration level: 
+         __declspec(uuid()), __declspec(selectany), __declspec(novtable)
+         DECLSPEC_UUID(), MIDL_INTERFACE()
+*/
+//@@MIDL_FILE_HEADING(  )
+
+#pragma warning( disable: 4049 )  /* more than 64k source lines */
+
+
+#ifdef __cplusplus
+extern "C"{
+#endif 
+
+
+#include <rpc.h>
+#include <rpcndr.h>
+
+#ifdef _MIDL_USE_GUIDDEF_
+
+#ifndef INITGUID
+#define INITGUID
+#include <guiddef.h>
+#undef INITGUID
+#else
+#include <guiddef.h>
+#endif
+
+#define MIDL_DEFINE_GUID(type,name,l,w1,w2,b1,b2,b3,b4,b5,b6,b7,b8) \
+        DEFINE_GUID(name,l,w1,w2,b1,b2,b3,b4,b5,b6,b7,b8)
+
+#else // !_MIDL_USE_GUIDDEF_
+
+#ifndef __IID_DEFINED__
+#define __IID_DEFINED__
+
+typedef struct _IID
+{
+    unsigned long x;
+    unsigned short s1;
+    unsigned short s2;
+    unsigned char  c[8];
+} IID;
+
+#endif // __IID_DEFINED__
+
+#ifndef CLSID_DEFINED
+#define CLSID_DEFINED
+typedef IID CLSID;
+#endif // CLSID_DEFINED
+
+#define MIDL_DEFINE_GUID(type,name,l,w1,w2,b1,b2,b3,b4,b5,b6,b7,b8) \
+        const type name = {l,w1,w2,{b1,b2,b3,b4,b5,b6,b7,b8}}
+
+#endif !_MIDL_USE_GUIDDEF_
+
+MIDL_DEFINE_GUID(IID, LIBID_CAMCAD,0xF8DE4B05,0xFBC2,0x11D1,0xBA,0x40,0x00,0x80,0xAD,0xB3,0x6D,0xBB);
+
+
+MIDL_DEFINE_GUID(IID, DIID_ICAMCAD,0xF8DE4B06,0xFBC2,0x11D1,0xBA,0x40,0x00,0x80,0xAD,0xB3,0x6D,0xBB);
+
+
+MIDL_DEFINE_GUID(CLSID, CLSID_Document,0x5BECA79B,0xEF3B,0x11D1,0xBA,0x40,0x00,0x80,0xAD,0xB3,0x6D,0xBB);
+
+
+MIDL_DEFINE_GUID(IID, DIID_IAPI,0xC3DB3A2F,0x0B71,0x11D2,0xBA,0x40,0x00,0x80,0xAD,0xB3,0x6D,0xBB);
+
+
+MIDL_DEFINE_GUID(CLSID, CLSID_Application,0xC3DB3A2D,0x0B71,0x11D2,0xBA,0x40,0x00,0x80,0xAD,0xB3,0x6D,0xBB);
+
+
+MIDL_DEFINE_GUID(IID, DIID_IDFM,0xDAD9B785,0xA34F,0x4786,0x81,0x11,0x9E,0x6B,0x9D,0xDA,0x6D,0xC1);
+
+
+MIDL_DEFINE_GUID(CLSID, CLSID_DFM,0x02CAD7F0,0xA311,0x4157,0xAC,0xFC,0xA6,0x66,0x6C,0x55,0xFF,0x19);
+
+
+MIDL_DEFINE_GUID(IID, DIID_IDFTFacade,0xD3B6EDD0,0xEE9D,0x4978,0x9C,0x20,0xE1,0x2D,0x2B,0xB7,0x62,0xEB);
+
+
+MIDL_DEFINE_GUID(CLSID, CLSID_DFTFacade,0x6AE201D4,0x8B7D,0x49c4,0x95,0x5D,0x45,0x0A,0x56,0x4B,0x26,0xBE);
+
+#undef MIDL_DEFINE_GUID
+
+#ifdef __cplusplus
+}
+#endif
+
+
+

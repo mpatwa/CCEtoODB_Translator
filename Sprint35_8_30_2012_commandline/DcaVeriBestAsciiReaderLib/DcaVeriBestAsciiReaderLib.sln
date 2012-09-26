@@ -1,0 +1,26 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DcaVeriBestAsciiReaderLib", "DcaVeriBestAsciiReaderLib.vcproj", "{0948D658-AF42-4350-BE81-FC9CB620120D}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		Debug = Debug
+		Rel Test with Debug Info = Rel Test with Debug Info
+		Release = Release
+	EndGlobalSection
+	GlobalSection(ProjectDependencies) = postSolution
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{0948D658-AF42-4350-BE81-FC9CB620120D}.Debug.ActiveCfg = Debug|Win32
+		{0948D658-AF42-4350-BE81-FC9CB620120D}.Debug.Build.0 = Debug|Win32
+		{0948D658-AF42-4350-BE81-FC9CB620120D}.Rel Test with Debug Info.ActiveCfg = Rel Test with Debug Info|Win32
+		{0948D658-AF42-4350-BE81-FC9CB620120D}.Rel Test with Debug Info.Build.0 = Rel Test with Debug Info|Win32
+		{0948D658-AF42-4350-BE81-FC9CB620120D}.Release.ActiveCfg = Release|Win32
+		{0948D658-AF42-4350-BE81-FC9CB620120D}.Release.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

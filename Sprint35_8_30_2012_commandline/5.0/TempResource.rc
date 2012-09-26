@@ -1,0 +1,351 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_StencilCompPinPagePreview DIALOGEX 0, 0, 664, 414
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_CHILD | WS_DISABLED | WS_CAPTION
+CAPTION "Component"
+FONT 8, "MS Shell Dlg", 0, 0, 0x0
+BEGIN
+    CONTROL         "Custom1",IDC_TreeListCtrl,"LANTIVTREELISTCTRL",
+                    WS_TABSTOP,6,114,174,258
+    PUSHBUTTON      "Expand All",IDC_EXPANDALL,6,378,50,14
+    PUSHBUTTON      "Collapse All",IDC_COLLAPSEALL,60,378,50,14
+    PUSHBUTTON      "Show Rules",IDC_ShowRules,114,378,50,14
+    PUSHBUTTON      "Remove All Rules",IDC_RemoveAllRules,6,396,66,14
+    LTEXT           "",IDC_GeometryDiagram,294,12,366,180,WS_BORDER
+    LTEXT           "Static",IDC_GeometryName,294,0,186,8
+    LTEXT           "",IDC_ApertureDiagram,474,216,186,93,WS_BORDER
+    RTEXT           "Static",IDC_ParameterCaption0,186,204,61,8
+    EDITTEXT        IDC_ParameterValue0,252,198,66,14,ES_AUTOHSCROLL
+    RTEXT           "Static",IDC_ParameterCaption1,186,222,61,8
+    EDITTEXT        IDC_ParameterValue1,252,216,66,14,ES_AUTOHSCROLL
+    RTEXT           "Static",IDC_ParameterCaption2,186,240,61,8
+    EDITTEXT        IDC_ParameterValue2,252,234,66,14,ES_AUTOHSCROLL
+    RTEXT           "Static",IDC_ParameterCaption3,186,257,61,8
+    EDITTEXT        IDC_ParameterValue3,252,252,66,14,ES_AUTOHSCROLL
+    RTEXT           "Static",IDC_ParameterCaption4,186,276,61,8
+    EDITTEXT        IDC_ParameterValue4,252,270,66,14,ES_AUTOHSCROLL
+    RTEXT           "Static",IDC_ParameterCaption5,186,294,61,8
+    EDITTEXT        IDC_ParameterValue5,252,288,66,14,ES_AUTOHSCROLL
+    LTEXT           "Static: Aperuture Units",IDC_ApertureUnitsStatic,474,
+                    195,162,8
+    GROUPBOX        "Origin",IDC_OriginGroup,324,234,138,48
+    COMBOBOX        IDC_OriginOptions,331,248,126,48,CBS_DROPDOWN | 
+                    WS_VSCROLL | WS_TABSTOP
+    CONTROL         "Display Alternate Centers",IDC_DisplayCenterAnnotations,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,330,265,98,10
+    COMBOBOX        IDC_ApertureType,325,198,144,246,CBS_DROPDOWN | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "",IDC_GenericApertureDiagram,474,318,186,93,WS_BORDER
+    RTEXT           "Static",IDC_GenericParameterCaption0,186,312,61,8
+    RTEXT           "Static",IDC_GenericParameterCaption1,186,330,61,8
+    RTEXT           "Static",IDC_GenericParameterCaption2,186,348,61,8
+    RTEXT           "Static",IDC_GenericParameterCaption3,186,366,61,8
+    RTEXT           "Static",IDC_GenericParameterCaption4,186,384,61,8
+    RTEXT           "Static",IDC_GenericParameterCaption5,186,402,61,8
+    LTEXT           "Static",IDC_GenericParameterDescription0,252,312,216,18
+    LTEXT           "Static",IDC_GenericParameterDescription1,252,330,216,18
+    LTEXT           "Static",IDC_GenericParameterDescription2,252,348,216,18
+    LTEXT           "Static",IDC_GenericParameterDescription3,252,366,216,18
+    LTEXT           "Static",IDC_GenericParameterDescription4,252,384,216,18
+    LTEXT           "Static",IDC_GenericParameterDescription5,253,402,216,12
+    LTEXT           "Static",IDC_GenericDescriptor,474,310,186,8
+    COMBOBOX        IDC_StencilRules,0,42,108,108,CBS_DROPDOWN | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_StencilRuleValues,114,42,144,72,CBS_DROPDOWN | 
+                    CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_StencilRuleModifiers,0,72,258,90,CBS_DROPDOWN | 
+                    CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Stencil Rule",IDC_StencilRuleStatic,0,30,38,8
+    LTEXT           "Rule Value",IDC_StencilRuleValueStatuc,114,30,34,8
+    LTEXT           "Rule Modifier",IDC_StencilRuleModifierStatuc,114,60,42,
+                    8
+    LTEXT           "Static: Selected Entity",IDC_SelectedEntityStatic,0,0,
+                    270,8
+    LTEXT           "Static: Inherited Rule",IDC_InheritedRuleStatic,0,12,
+                    270,8
+    GROUPBOX        "Copper Pad Extents",IDC_CopperPadExtentsGroup,324,282,
+                    138,24
+    LTEXT           "Static: Copper pad extents",IDC_CopperPadExtentsStatic,
+                    330,294,126,8
+    PUSHBUTTON      "Apply",IDC_APPLY,324,216,24,14
+    LTEXT           "Static: Descriptor",IDC_Descriptor,474,204,186,8
+    CTEXT           "X",IDC_XOffsetStatic,192,96,84,8
+    EDITTEXT        IDC_XOffsetEditBox,216,108,58,14,ES_AUTOHSCROLL
+    CTEXT           "Y",IDC_YOffsetStatic,192,120,84,8
+    EDITTEXT        IDC_YOffsetEditBox,216,132,58,14,ES_AUTOHSCROLL
+    CTEXT           "Angle",IDC_AngleOffsetStatic,192,144,84,8
+    EDITTEXT        IDC_AngleOffsetEditBox,216,156,58,14,ES_AUTOHSCROLL
+    GROUPBOX        "Offset",IDC_OffsetGroup,186,90,96,84
+    PUSHBUTTON      "Apply",IDC_APPLY2,264,72,24,14
+    CTEXT           "Report Status",IDC_RuleStatus,0,90,180,18,
+                    SS_CENTERIMAGE | SS_SUNKEN
+    PUSHBUTTON      "w <-> h",IDC_SwapWidthAndHeight,354,216,36,14
+    PUSHBUTTON      "Placed Top",IDC_GeometryPlacedTopBottom,594,0,66,12
+END
+
+IDD_StencilCompPinPagePreview1 DIALOGEX 0, 0, 664, 414
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_CHILD | WS_DISABLED | WS_CAPTION
+CAPTION "Component"
+FONT 8, "MS Shell Dlg", 0, 0, 0x0
+BEGIN
+    CONTROL         "Custom1",IDC_TreeListCtrl,"LANTIVTREELISTCTRL",
+                    WS_TABSTOP,4,68,176,322
+    PUSHBUTTON      "Expand",IDC_EXPANDALL,6,396,30,14
+    PUSHBUTTON      "Collapse",IDC_COLLAPSEALL,42,396,30,14
+    PUSHBUTTON      "Show Rules",IDC_ShowRules,78,396,42,14
+    PUSHBUTTON      "Remove All Rules",IDC_RemoveAllRules,126,396,60,14
+    LTEXT           "",IDC_GeometryDiagram,268,4,392,188,WS_BORDER
+    LTEXT           "Static: Geometry Name",IDC_GeometryName,268,196,186,8
+    LTEXT           "",IDC_ApertureDiagram,474,216,186,93,WS_BORDER
+    RTEXT           "Static",IDC_ParameterCaption0,188,286,61,8
+    EDITTEXT        IDC_ParameterValue0,254,280,66,14,ES_AUTOHSCROLL
+    RTEXT           "Static",IDC_ParameterCaption1,188,304,61,8
+    EDITTEXT        IDC_ParameterValue1,254,298,66,14,ES_AUTOHSCROLL
+    RTEXT           "Static",IDC_ParameterCaption2,188,322,61,8
+    EDITTEXT        IDC_ParameterValue2,254,316,66,14,ES_AUTOHSCROLL
+    RTEXT           "Static",IDC_ParameterCaption3,188,339,61,8
+    EDITTEXT        IDC_ParameterValue3,254,334,66,14,ES_AUTOHSCROLL
+    RTEXT           "Static",IDC_ParameterCaption4,188,358,61,8
+    EDITTEXT        IDC_ParameterValue4,254,352,66,14,ES_AUTOHSCROLL
+    LTEXT           "Static: Aperture Units",IDC_ApertureUnitsStatic,474,195,
+                    162,8
+    GROUPBOX        "Origin",IDC_OriginGroup,326,316,138,48
+    COMBOBOX        IDC_OriginOptions,333,330,126,48,CBS_DROPDOWN | 
+                    WS_VSCROLL | WS_TABSTOP
+    CONTROL         "Display Alternate Centers",IDC_DisplayCenterAnnotations,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,332,347,98,10
+    COMBOBOX        IDC_ApertureType,327,280,144,246,CBS_DROPDOWN | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "",IDC_GenericApertureDiagram,474,318,186,93,WS_BORDER
+    LTEXT           "Static: Generic Descriptor",IDC_GenericDescriptor,474,
+                    310,186,8
+    GROUPBOX        "Copper Pad Extents",IDC_CopperPadExtentsGroup,326,364,
+                    138,24
+    LTEXT           "Static: Copper pad extents",IDC_CopperPadExtentsStatic,
+                    332,376,126,8
+    PUSHBUTTON      "Apply",IDC_APPLY,326,298,24,14
+    LTEXT           "Static: Descriptor",IDC_Descriptor,474,204,186,8
+    PUSHBUTTON      "Apply",IDC_APPLY2,152,52,24,14
+    CTEXT           "Report Status",IDC_RuleStatus,4,48,144,18,
+                    SS_CENTERIMAGE | SS_SUNKEN
+    PUSHBUTTON      "w <-> h",IDC_SwapWidthAndHeight,356,298,36,14
+    LTEXT           "Static",IDC_GenericParameterDescription4,228,394,242,18
+    GROUPBOX        "Shape Rule",IDC_STATIC,4,0,176,44
+    CONTROL         "Toward center",IDC_RADIO1,"Button",BS_AUTORADIOBUTTON,
+                    188,72,63,10
+    CONTROL         "Away from center",IDC_RADIO8,"Button",
+                    BS_AUTORADIOBUTTON,188,80,73,10
+    CONTROL         "Normal",IDC_RADIO15,"Button",BS_AUTORADIOBUTTON,188,88,
+                    38,10
+    COMBOBOX        IDC_StencilRules,64,12,112,108,CBS_DROPDOWN | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_StencilRuleValues,8,28,168,72,CBS_DROPDOWN | 
+                    CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "Assign",IDC_AssignShapeRule,8,12,50,12
+    GROUPBOX        "Split",IDC_STATIC,184,212,80,64
+    CTEXT           "Max Feature",IDC_XOffsetStatic2,188,236,32,16
+    EDITTEXT        IDC_MaxFeatureEditBox,220,240,42,14,ES_AUTOHSCROLL
+    CTEXT           "Web Width",IDC_AngleOffsetStatic2,188,252,32,16
+    EDITTEXT        IDC_WebWidthEditBox,220,256,42,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "Assign",IDC_AssignShapeRule2,188,225,50,12
+    GROUPBOX        "Orientation",IDC_STATIC,184,44,80,56
+    PUSHBUTTON      "Assign",IDC_AssignShapeRule3,188,56,50,12
+    CONTROL         "Toward center",IDC_RADIO3,"Button",BS_AUTORADIOBUTTON,
+                    188,132,63,10
+    CONTROL         "Away from center",IDC_RADIO14,"Button",
+                    BS_AUTORADIOBUTTON,188,140,73,10
+    CONTROL         "Normal",IDC_RADIO16,"Button",BS_AUTORADIOBUTTON,188,148,
+                    38,10
+    GROUPBOX        "Offset",IDC_STATIC,184,104,80,108
+    PUSHBUTTON      "Assign",IDC_AssignShapeRule4,188,116,50,12
+    RTEXT           "X",IDC_XOffsetStatic,192,164,18,8
+    EDITTEXT        IDC_XOffsetEditBox,216,160,42,14,ES_AUTOHSCROLL
+    RTEXT           "Y",IDC_YOffsetStatic,192,180,18,8
+    EDITTEXT        IDC_YOffsetEditBox,216,176,42,14,ES_AUTOHSCROLL
+    RTEXT           "Rot.",IDC_AngleOffsetStatic,192,196,18,8
+    EDITTEXT        IDC_AngleOffsetEditBox,216,192,42,14,ES_AUTOHSCROLL
+    GROUPBOX        "Symmetry Axis",IDC_STATIC,184,0,80,40
+    PUSHBUTTON      "Assign",IDC_AssignShapeRule5,188,12,50,12
+    CONTROL         "Flipped",IDC_CHECK1,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,188,28,39,10
+END
+
+IDD_StencilCompPinPagePreviewOld DIALOGEX 0, 0, 664, 414
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_CHILD | WS_DISABLED | WS_CAPTION
+CAPTION "Component"
+FONT 8, "MS Shell Dlg", 0, 0, 0x0
+BEGIN
+    CONTROL         "Custom1",IDC_TreeListCtrl,"LANTIVTREELISTCTRL",
+                    WS_TABSTOP,6,114,174,258
+    PUSHBUTTON      "Expand All",IDC_EXPANDALL,6,378,50,14
+    PUSHBUTTON      "Collapse All",IDC_COLLAPSEALL,60,378,50,14
+    PUSHBUTTON      "Show Rules",IDC_ShowRules,114,378,50,14
+    PUSHBUTTON      "Remove All Rules",IDC_RemoveAllRules,6,396,66,14
+    LTEXT           "",IDC_GeometryDiagram,294,12,366,180,WS_BORDER
+    LTEXT           "Static",IDC_GeometryName,294,0,186,8
+    LTEXT           "",IDC_ApertureDiagram,474,216,186,93,WS_BORDER
+    RTEXT           "Static",IDC_ParameterCaption0,186,204,61,8
+    EDITTEXT        IDC_ParameterValue0,252,198,66,14,ES_AUTOHSCROLL
+    RTEXT           "Static",IDC_ParameterCaption1,186,222,61,8
+    EDITTEXT        IDC_ParameterValue1,252,216,66,14,ES_AUTOHSCROLL
+    RTEXT           "Static",IDC_ParameterCaption2,186,240,61,8
+    EDITTEXT        IDC_ParameterValue2,252,234,66,14,ES_AUTOHSCROLL
+    RTEXT           "Static",IDC_ParameterCaption3,186,257,61,8
+    EDITTEXT        IDC_ParameterValue3,252,252,66,14,ES_AUTOHSCROLL
+    RTEXT           "Static",IDC_ParameterCaption4,186,276,61,8
+    EDITTEXT        IDC_ParameterValue4,252,270,66,14,ES_AUTOHSCROLL
+    RTEXT           "Static",IDC_ParameterCaption5,186,294,61,8
+    EDITTEXT        IDC_ParameterValue5,252,288,66,14,ES_AUTOHSCROLL
+    LTEXT           "Static: Aperuture Units",IDC_ApertureUnitsStatic,474,
+                    195,162,8
+    GROUPBOX        "Origin",IDC_OriginGroup,324,234,138,48
+    COMBOBOX        IDC_OriginOptions,331,248,126,48,CBS_DROPDOWN | 
+                    WS_VSCROLL | WS_TABSTOP
+    CONTROL         "Display Alternate Centers",IDC_DisplayCenterAnnotations,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,330,265,98,10
+    COMBOBOX        IDC_ApertureType,325,198,144,246,CBS_DROPDOWN | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "",IDC_GenericApertureDiagram,474,318,186,93,WS_BORDER
+    RTEXT           "Static",IDC_GenericParameterCaption0,186,312,61,8
+    RTEXT           "Static",IDC_GenericParameterCaption1,186,330,61,8
+    RTEXT           "Static",IDC_GenericParameterCaption2,186,348,61,8
+    RTEXT           "Static",IDC_GenericParameterCaption3,186,366,61,8
+    RTEXT           "Static",IDC_GenericParameterCaption4,186,384,61,8
+    RTEXT           "Static",IDC_GenericParameterCaption5,186,402,61,8
+    LTEXT           "Static",IDC_GenericParameterDescription0,252,312,216,18
+    LTEXT           "Static",IDC_GenericParameterDescription1,252,330,216,18
+    LTEXT           "Static",IDC_GenericParameterDescription2,252,348,216,18
+    LTEXT           "Static",IDC_GenericParameterDescription3,252,366,216,18
+    LTEXT           "Static",IDC_GenericParameterDescription4,252,384,216,18
+    LTEXT           "Static",IDC_GenericParameterDescription5,253,402,216,12
+    LTEXT           "Static",IDC_GenericDescriptor,474,310,186,8
+    COMBOBOX        IDC_StencilRules,0,42,108,108,CBS_DROPDOWN | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_StencilRuleValues,114,42,144,72,CBS_DROPDOWN | 
+                    CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_StencilRuleModifiers,0,72,258,90,CBS_DROPDOWN | 
+                    CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Stencil Rule",IDC_StencilRuleStatic,0,30,38,8
+    LTEXT           "Rule Value",IDC_StencilRuleValueStatuc,114,30,34,8
+    LTEXT           "Rule Modifier",IDC_StencilRuleModifierStatuc,114,60,42,
+                    8
+    LTEXT           "Static: Selected Entity",IDC_SelectedEntityStatic,0,0,
+                    270,8
+    LTEXT           "Static: Inherited Rule",IDC_InheritedRuleStatic,0,12,
+                    270,8
+    GROUPBOX        "Copper Pad Extents",IDC_CopperPadExtentsGroup,324,282,
+                    138,24
+    LTEXT           "Static: Copper pad extents",IDC_CopperPadExtentsStatic,
+                    330,294,126,8
+    PUSHBUTTON      "Apply",IDC_APPLY,324,216,24,14
+    LTEXT           "Static: Descriptor",IDC_Descriptor,474,204,186,8
+    CTEXT           "X",IDC_XOffsetStatic,192,96,84,8
+    EDITTEXT        IDC_XOffsetEditBox,216,108,58,14,ES_AUTOHSCROLL
+    CTEXT           "Y",IDC_YOffsetStatic,192,120,84,8
+    EDITTEXT        IDC_YOffsetEditBox,216,132,58,14,ES_AUTOHSCROLL
+    CTEXT           "Angle",IDC_AngleOffsetStatic,192,144,84,8
+    EDITTEXT        IDC_AngleOffsetEditBox,216,156,58,14,ES_AUTOHSCROLL
+    GROUPBOX        "Offset",IDC_OffsetGroup,186,90,96,84
+    PUSHBUTTON      "Apply",IDC_APPLY2,264,72,24,14
+    CTEXT           "Report Status",IDC_RuleStatus,0,90,180,18,
+                    SS_CENTERIMAGE | SS_SUNKEN
+    PUSHBUTTON      "w <-> h",IDC_SwapWidthAndHeight,354,216,36,14
+    PUSHBUTTON      "Placed Top",IDC_GeometryPlacedTopBottom,594,0,66,12
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_StencilCompPinPagePreview, DIALOG
+    BEGIN
+        RIGHTMARGIN, 598
+        BOTTOMMARGIN, 342
+    END
+
+    IDD_StencilCompPinPagePreview1, DIALOG
+    BEGIN
+        RIGHTMARGIN, 598
+        BOTTOMMARGIN, 342
+    END
+
+    IDD_StencilCompPinPagePreviewOld, DIALOG
+    BEGIN
+        RIGHTMARGIN, 598
+        BOTTOMMARGIN, 342
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

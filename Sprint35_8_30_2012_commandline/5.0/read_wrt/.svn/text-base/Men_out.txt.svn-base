@@ -1,0 +1,263 @@
+/*
+Loosing traces :
+Wolfgang,   It sounds like there must be some design-rule set in your
+design that is not allowing all traces to be read in.
+Try this:
+1. once your in layout, turn checking off.
+2. select the following menu: "setup placement>interactive
+placement>attempt reconnect"  then click on "rip up segments only" , OK.
+
+3. then use the restore traces command and click on  "replace existing
+traces", "fix improperly connected routing", "remove duplicate routing".
+
+
+
+good luck,
+
+--
+GARY SAEWERT
+Contracted to Los Alamos National Labs
+e-mail: saewert@lanl.gov
+w.phone: (505) 667-1614
+
+
+
+  The rules for PADSTACK layers are:
+
+  1. SMD pads PAD is the layer to use
+  2. For thruhole SIGNAL is the layer to use.
+
+	ROUTING_LAYERS 4 = signal layers
+
+	define_physical_layer(1,"PHYSICAL_1",SIGNAL_1, PAD_1");
+	define_physical_layer(2,"PHYSICAL_2",SIGNAL_2");
+	define_physical_layer(3,"PHYSICAL_3",POWER_1");
+	define_physical_layer(4,"PHYSICAL_4",POWER_2");
+	define_physical_layer(5,"PHYSICAL_5",SIGNAL_3");
+	define_physical_layer(6,"PHYSICAL_6",SIGNAL_4, PAD_2");
+
+
+	XRF	1	SIGNAL_1
+	XRF	2	SIGNAL_2
+	XRF	3	POWER_1
+	XRF	4	POWER_2
+	XRF	5	SIGNAL_3
+	XRF	6	SIGNAL_4
+
+*/
+
+/****************************************************************************/
+/*
+In Mentor librarian we can have minimum .0001 inch
+grid OR .00001 mm grid. Below this prcision lost.
+
+It is essential to have some work around conversion
+of values from inches to mm or vice versa.
+
+We can use highly precise values in Librarian. But
+if same pricision level used in layout / fablink, 
+creates problems like memory requirement,large size
+of GERBER files, defining apertures etc.
+
+Please have a look to example given in below table:
+
+Conversion         tol.    Conversion         tol.
+inches to mm      0.01mm   mm to inches       0.001"
+- ----------------------------------------------------
+.001 = .0254      0.025     0.025 = .000984   0.001
+- ----------------------------------------------------
+3.333 = 84.6582   84.66    84.66 = 3.3330709  3.333
+- ----------------------------------------------------
+2.021 = 51.3334   51.33    51.33 = 2.0208661  2.021
+- ----------------------------------------------------
+*/
+
+/****************************************************************************/
+/*
+Thank You,
+Dean Faber
+AE, Router Solutions, Inc.
+Ph: (949) 721-1017
+Fx: (949) 721-1019
+-----Original Message-----
+From: Michael Milner <michael_milner@mentorg.com>
+To: dean@rsi-inc.com <dean@rsi-inc.com>
+Cc: michaelm <michael_milner@mentorg.com>; kim_owen@mentorg.com
+<kim_owen@mentorg.com>
+Date: Wednesday, September 02, 1998 12:38 PM
+Subject: Setting up split planes on Boardstation
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Tan Id:              10276
+Product:             Board Station
+Platform:
+Operating System:
+Created Date:        16 Apr 96
+Modified Date:       16 Apr 96
+Initial Version:     8.X
+Final Version:       x.X
+Short Desc:          Methodology for generating split planes for analysis
+
+
+===============================================
+Problem Text:
+-----------------------------------------------
+
+
+Board Station accepts several different ways of configuring split power
+planes. What methodology will ensure best results during auto-routing,
+testpoint generation, high speed analysis, signal integrity analysis,
+and post-process artwork checking?
+
+
+
+===============================================
+Solution Text:
+-----------------------------------------------
+
+
+The system accepts several different ways of configuring split planes. The
+following is the Mentor Graphics supported methodology which ensures best
+results during auto-routing, testpoint generation, high speed analysis,
+signal integrity analysis, and post-process artwork checking.
+
+Each individual net which appears on a power plane layer must be specified
+using the power_net_names attribute in the board geometry. This can be
+accomplished by using the Change Geometry function for the board geometry
+in Librarian. If the same net is used many times, then specify it the same
+number of times.
+
+Organize the power net names in the power net statement grouped in the order
+they will use power_n layers separated by commas which indicate layer
+separations. Such as:
+
+vcc /phy/crm/syvcc gnd_3, gnd_2 ground gnd_3, vcc3_3v gnd_3, ground gnd_3
+
+
+Net 'vcc' maps to power_1, net '/phy/crm/syvcc' maps to power_2, net 'gnd_3'
+maps to power_3, etc.
+
+This is done all on one line in the create/change board part pop-up (even
+though the system will show a second line leave it blank).
+
+The viewing layer is the first power plane layer for each group as defined in
+the artwork order. Be sure the power net name used on multiple split power
+planes is not defined as the viewing layer of a split power plane more than
+once in the artwork order. This ensures that each power fill generates
+successfully.
+
+In the example power net names list above, the second net names group (gnd_2
+ground gnd_3) contains ground, and the fourth net names group (ground gnd_3)
+also contains ground. Net ground will not be associated with the first or
+viewing layer more than once. This allows different power net names to be the
+viewing layers and results in all the power fills and artwork generating correctly.
+
+Next, use the 'Physical Layers>Set Up Physical Layers'  menu pick to create as
+many power_n layers as there are net names specified in the power net names
+statement on the board part.
+
+Then create the artwork order part the example as shown below illustrates.
+Take care to organize the power layers in order. If you need to add a layer
+later, redo the layers stackup so they stay in order.
+
+  1 signal_1, pad_1
+  2 power_1, power_2, power_3
+  3 power_4, power_5, power_6
+  4 power_7, power_8
+  5 power_9, power_10
+  6 signal_2, pad_2
+
+The following table illustrates an example logical layer/net name/physical
+layer matrix;
+
+
+     Logical   Net Name         Physical
+   -
+1 |  signal_1,pad_1             phys1
+   -
+  |  power_1*  VCC              phys2_vcc
+2 |  power_2   /phy/crm/syvcc   phys2_syvcc
+  |  power_3   gnd_3            phys2_gnd3
+   -
+  |  power_4*  gnd2             phys3_gnd2
+3 |  power_5   ground           phys3_ground
+  |  power_6   gnd_3            phys3_gnd3
+   -
+4 |  power_7*  vcc3_3v          phys4_vcc3_3v
+  |  power_8   gnd3             phys4_gnd3
+   -
+5 |  power_9*  ground           phys5_ground
+  |  power_10  gnd_3            phys5_gnd3
+   -
+6 |  signal_2,pad_2             phys6
+   -
+           *viewing layer for each group
+
+Now add the split power planes in Layout or Fablink as described in the
+'Fablink Users Manual V8.4_3' beginning on page 4-176.
+
+Be aware that in some versions of Board Station before 8.3x there is a
+bug with power planes which are completely enclosed within larger
+planes.
+
+     ---------------------
+    |         B           |
+    |                     |
+    |     ----------      |
+    |    |          |     |
+    |    |    A     |     |
+    |    |          |     |
+    |     ----------      |
+    |                     |
+     ---------------------
+
+In the above example a power fill of net A is completely enclosed by another
+power fill of net B; if the power fill of net A contains pins and/or vias
+belonging to net B, then those pins and/or vias are not cleared but
+shorted to net A in the artwork.
+
+The workaround for this problem is to create the power fills so that one fill
+does not fully contain another fill inside of it. This requires either
+digitizing a gap when creating theoutside power fill or adding a power fill
+cutout to the existing outside power fill. For example;
+
+     -------   -----------
+    |       | |  B        |
+    |       | |           |
+    |     ----------      |
+    |    |          |     |
+    |    |    A     |     |
+    |    |          |     |
+    |     ----------      |
+    |                     |
+     ---------------------
+
+Power fill checking;
+
+Menu pick 'Check>Power Fills on Physical Layers' in Layout or Fablink must be
+performed after creating split power planes or after performing any
+modifications to a design after the power fills have been added to the design.
+This restructures the power fills if necessary in order to eliminate any
+potential shorts within the power fill areas, and reportson any pins and vias
+disconnected from the power fills.  The system does NOT automatically
+restructure power fills if changes were made to the layout after the power
+fills were created. Some examples of these changes are adding new vias or
+moving components. A separate 'Check>Power Fills on Physical Layers' command
+must be issued for each power plane viewing layer in the stackup.
+
+Check power fills by connectivity does not restructure the power fills
+and only reports on pins and vias not contained within their respective
+power fill
+
+TechNotes 7029 8227 where used in the creation of this paper.
+
+end.
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Mike Milner               michael_milner@mentorg.com
+SDD Customer Support                  1-800-547-4303
+Mentor Graphics Corp.         http://www.mentorg.com
+
+*/

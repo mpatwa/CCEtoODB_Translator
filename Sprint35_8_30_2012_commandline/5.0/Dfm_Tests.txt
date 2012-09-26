@@ -1,0 +1,146 @@
+STACKUPS
+--------
+1 (Top)	
+	- Layers with Electrical Stackup Number 1
+	- Layers of LayerType PAD_TOP, PAD_OUTER, PAD_ALL, SIGNAL_TOP with Electrical Stackup 0
+
+2
+...
+n-1
+	- Layers with Electrical Stackup Number x
+	- Layers of LayerType PAD_INNER with Electrical Stackup 0
+	- Layers of LayerType PAD_ALL
+
+n (Bottom)
+	- Layers with Electrical Stackup Number n
+	- Layers of LayerType PAD_BOTTOM, PAD_OUTER, PAD_ALL, SIGNAL_BOTTOM with Electrical Stackup 0
+	
+
+PANEL
+-----
+
+GoldFinger to Panel Edge
+- for layers of type DFT_OUTLINE_TOP and DFT_OUTLINE_BOT FlattenGoldFinger(layer)
+- ComponentFlushWithOutline()
+
+All Components to Panel Edge
+- for layers of type DFT_OUTLINE_TOP and DFT_OUTLINE_BOT FlattenByInserttype(layer, IT_Comp, FALSE)
+- if Fiducials, for layers PAD_TOP, PAD_ALL, PAD_BOT, PAD_OUTER, stackup 1, stackup n - FlattenByInserttype(layer, IT_Fiducial, FALSE)
+- if Tooling, for layers PAD_TOP, PAD_ALL, PAD_BOT, PAD_OUTER, stackup 1, stackup n - FlattenByInserttype(layer, IT_Tooling, FALSE)
+- ClearanceToPanelEdge()
+
+Fiducials to Panel Edge
+- for layers PAD_TOP, PAD_ALL, PAD_BOT, PAD_OUTER, stackup 1, stackup n - FlattenByInserttype(layer, IT_Fiducial, FALSE)
+- ClearanceToPanelEdge()
+
+
+BOARD
+-----
+
+GoldFinger to Board Edge
+- for layers of type DFT_OUTLINE_TOP and DFT_OUTLINE_BOT FlattenGoldFinger(layer)
+- ComponentFlushWithOutline()
+
+Component to Board Edge
+- Flatten(BoardOutlineLayer)
+- for layers of type DFT_OUTLINE_TOP and DFT_OUTLINE_BOT FlattenByInserttype(layer, IT_Comp, FALSE)
+- DistanceCheckClassInserttype(GC_BoardOutline, IT_Comp)
+
+Etch to Board Edge
+- Flatten(BoardOutlineLayer)
+- for layers SIGNAL_TOP, SIGNAL_BOT, stackup 1, stackup n - Flatten(layer)
+- DistanceCheckClassClass(GC_BoardOutline, GC_Etch)
+
+Via to Board Edge
+- Flatten(BoardOutlineLayer)
+- for layers PAD_TOP, PAD_ALL, PAD_BOT, PAD_OUTER, stackup 1, stackup n - FlattenByInserttype(layer, IT_Via, FALSE)
+- DistanceCheckClassInserttype(GC_BoardOutline, IT_Via)
+
+Fiducial to Board Edge
+- Flatten(BoardOutlineLayer)
+- for layers PAD_TOP, PAD_ALL, PAD_BOT, PAD_OUTER, stackup 1, stackup n - FlattenByInserttype(layer, IT_Fiducial, FALSE)
+- DistanceCheckClassInserttype(GC_BoardOutline, IT_Fiducial)
+
+TestPoint to Board Edge
+- Flatten(BoardOutlineLayer)
+- for layers PAD_TOP, PAD_ALL, PAD_BOT, PAD_OUTER, stackup 1, stackup n - FlattenByAttrib(layer, "TEST", "", IT_Testpoint, FALSE)
+- DistanceCheckClassInserttype(GC_BoardOutline, IT_Testpoint)
+
+
+TESTPOINT
+---------
+
+Testpoint Center to Testpoint Center
+- for layers PAD_TOP, PAD_ALL, PAD_BOT, PAD_OUTER, stackup 1, stackup n - FlattenByAttrib(layer, "TEST", "", IT_Testpoint, TRUE)
+- DistanceCheckInserttypeInserttype(IT_Testpoint, IT_Testpoint)
+
+Testpoint Center to Component Body
+- for layers PAD_TOP, PAD_ALL, PAD_BOT, PAD_OUTER, stackup 1, stackup n - FlattenByAttrib(layer, "TEST", "", IT_Testpoint, TRUE)
+- for layers of type DFT_OUTLINE_TOP and DFT_OUTLINE_BOT FlattenByInserttype(layer, IT_Comp, FALSE)
+- DistanceCheckInserttypeInserttype(IT_Testpoint, IT_Comp)
+
+Testpoint Edge to Component Pad Edge
+- for layers PAD_TOP, PAD_ALL, PAD_BOT, PAD_OUTER, stackup 1, stackup n - FlattenByAttrib(layer, "TEST", "", IT_Testpoint, FALSE)
+- for layers PAD_TOP, PAD_ALL, PAD_BOT, PAD_OUTER, stackup 1, stackup n - FlattenByInserttype(layer, IT_Pin, FALSE)
+- DistanceCheckInserttypeInserttype(IT_Testpoint, IT_Comp)
+
+
+RSI
+---
+
+Distance Check Copper on All Electrical Layers
+- for each stackup number
+	- flatten relevant layers for this Electrical Stackup Number
+	- DistanceCheck()
+	
+Distance Check Visible Layers
+- flatten visible layers
+- DistanceCheck()
+
+VIA
+---
+
+Via Edge to Testpoint
+
+if ignoring SolderMask,
+- for layers PAD_TOP, PAD_ALL, PAD_BOT, PAD_OUTER, stackup 1, stackup n - FlattenByInserttype(layer, IT_Via, FALSE)
+- for layers PAD_TOP, PAD_ALL, PAD_BOT, PAD_OUTER, stackup 1, stackup n - FlattenByAttrib(layer, "TEST", "", IT_Testpoint, FALSE)
+- DistanceCheckInserttypeInserttype(IT_Via, IT_Testpoint)
+
+if using SolderMask,
+- CreateFlattenGoemtry - copperGeometry
+- for layers PAD_TOP, PAD_ALL, PAD_BOT, PAD_OUTER, stackup 1, stackup n - FlattenByInserttype(copperGeometry, layer, IT_Via, FALSE)
+- for layers PAD_TOP, PAD_ALL, PAD_BOT, PAD_OUTER, stackup 1, stackup n - FlattenByAttrib(copperGeometry, layer, "TEST", "", IT_Testpoint, FALSE)
+
+- CreateFlattenGoemtry - soldermaskGeometry
+- for layers soldermask layers - Flatten(soldermaskGeometry, layer)
+- ProcessSoldemask()
+
+- DistanceCheckInserttypeInserttype(copperGeometry, IT_Via, IT_Testpoint)
+
+
+if ignoring SolderMask,
+Via Edge to Component Pin
+- for layers PAD_TOP, PAD_ALL, PAD_BOT, PAD_OUTER, stackup 1, stackup n - FlattenByInserttype(layer, IT_Via, IT_Pin, FALSE)
+- DistanceCheckInserttypeInserttype(IT_Via, IT_Pin)
+
+if ignoring SolderMask,
+Via Edge to Via Edge
+- for layers PAD_TOP, PAD_ALL, PAD_BOT, PAD_OUTER, stackup 1, stackup n - FlattenByInserttype(layer, IT_Via, IT_Via, FALSE)
+- DistanceCheckInserttypeInserttype(IT_Via, IT_Via)
+
+CORNERS
+-------
+
+Board Fiducials in Corners
+- for layers PAD_TOP, PAD_ALL, PAD_BOT, PAD_OUTER, stackup 1, stackup n - FlattenByInserttype(layer, IT_Fiducial, FALSE)
+- ItemsInCorners(, 1 or 2)
+
+Panel Fiducials in Corners
+- for layers PAD_TOP, PAD_ALL, PAD_BOT, PAD_OUTER, stackup 1, stackup n - FlattenByInserttype(layer, IT_Fiducial, FALSE)
+- ItemsInCorners(, 1 or 2)
+
+Panel Tooling Holes in Corners
+- for layers PAD_TOP, PAD_ALL, PAD_BOT, PAD_OUTER, stackup 1, stackup n - FlattenByInserttype(layer, IT_Fiducial, FALSE)
+- ItemsInCorners(0)
+

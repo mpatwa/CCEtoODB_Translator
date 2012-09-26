@@ -1,0 +1,198 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CAMCAD 5.0", "Camcad.vcproj", "{A5ECF626-2A48-4B8F-A2AA-2B0AFA4793A3}"
+	ProjectSection(ProjectDependencies) = postProject
+		{99A3432E-FB11-42D3-91CF-EBD80FAE887A} = {99A3432E-FB11-42D3-91CF-EBD80FAE887A}
+		{0948D658-AF42-4350-BE81-FC9CB620120D} = {0948D658-AF42-4350-BE81-FC9CB620120D}
+		{57068CA8-524C-41AC-9230-FF9DCDA778F6} = {57068CA8-524C-41AC-9230-FF9DCDA778F6}
+		{CB124FB3-6092-4C79-B976-5F3A675F84E3} = {CB124FB3-6092-4C79-B976-5F3A675F84E3}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DcaLib", "..\DcaLib\DcaLib.vcproj", "{99A3432E-FB11-42D3-91CF-EBD80FAE887A}"
+	ProjectSection(ProjectDependencies) = postProject
+		{57068CA8-524C-41AC-9230-FF9DCDA778F6} = {57068CA8-524C-41AC-9230-FF9DCDA778F6}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ZLib", "..\ZLib\ZLib.vcproj", "{57068CA8-524C-41AC-9230-FF9DCDA778F6}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "UltimateGrid2005", "..\UltimateGrid2005\UltimateGrid2005.vcproj", "{CB124FB3-6092-4C79-B976-5F3A675F84E3}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DcaVeriBestAsciiReaderLib", "..\DcaVeriBestAsciiReaderLib\DcaVeriBestAsciiReaderLib.vcproj", "{0948D658-AF42-4350-BE81-FC9CB620120D}"
+	ProjectSection(ProjectDependencies) = postProject
+		{99A3432E-FB11-42D3-91CF-EBD80FAE887A} = {99A3432E-FB11-42D3-91CF-EBD80FAE887A}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SourceCodeControl) = preSolution
+		SccNumberOfProjects = 5
+		SccProjectName0 = \u0022$/CAMCAD/5.0\u0022,\u0020UYRAAAAA
+		SccLocalPath0 = .
+		SccProvider0 = MSSCCI:Microsoft\u0020Visual\u0020SourceSafe
+		CanCheckoutShared = true
+		SolutionUniqueID = {31CFBA8A-69E2-415B-83AE-D954889196B2}
+		SccProjectUniqueName1 = Camcad.vcproj
+		SccLocalPath1 = .
+		CanCheckoutShared = true
+		SccProjectUniqueName2 = ..\\DcaLib\\DcaLib.vcproj
+		SccProjectName2 = \u0022$/CAMCAD/DcaLib\u0022,\u0020EOSAAAAA
+		SccLocalPath2 = ..\\DcaLib
+		CanCheckoutShared = true
+		SccProjectUniqueName3 = ..\\ZLib\\ZLib.vcproj
+		SccProjectName3 = \u0022$/CAMCAD/ZLib\u0022,\u0020IBTAAAAA
+		SccLocalPath3 = ..\\ZLib
+		CanCheckoutShared = true
+		SccProjectUniqueName4 = ..\\UltimateGrid2005\\UltimateGrid2005.vcproj
+		SccProjectName4 = \u0022$/CAMCAD/UltimateGrid2005\u0022,\u0020TITAAAAA
+		SccLocalPath4 = ..\\UltimateGrid2005
+		CanCheckoutShared = true
+	EndGlobalSection
+	GlobalSection(SolutionConfiguration) = preSolution
+		Debug = Debug
+		DevPartnerDebugBoundsChecker = DevPartnerDebugBoundsChecker
+		DevPartnerDebugProfiler = DevPartnerDebugProfiler
+		DevPartnerReleaseProfiler = DevPartnerReleaseProfiler
+		Rel Test = Rel Test
+		Rel Test with Debug Info = Rel Test with Debug Info
+		Rel Test with Debug, Leda = Rel Test with Debug, Leda
+		Release = Release
+		Shareware = Shareware
+	EndGlobalSection
+	GlobalSection(ProjectDependencies) = postSolution
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{A5ECF626-2A48-4B8F-A2AA-2B0AFA4793A3}.Debug.ActiveCfg = Debug|Win32
+		{A5ECF626-2A48-4B8F-A2AA-2B0AFA4793A3}.Debug.Build.0 = Debug|Win32
+		{A5ECF626-2A48-4B8F-A2AA-2B0AFA4793A3}.DevPartnerDebugBoundsChecker.ActiveCfg = DevPartnerDebugBoundsChecker|Win32
+		{A5ECF626-2A48-4B8F-A2AA-2B0AFA4793A3}.DevPartnerDebugBoundsChecker.Build.0 = DevPartnerDebugBoundsChecker|Win32
+		{A5ECF626-2A48-4B8F-A2AA-2B0AFA4793A3}.DevPartnerDebugProfiler.ActiveCfg = DevPartnerDebugProfiler|Win32
+		{A5ECF626-2A48-4B8F-A2AA-2B0AFA4793A3}.DevPartnerDebugProfiler.Build.0 = DevPartnerDebugProfiler|Win32
+		{A5ECF626-2A48-4B8F-A2AA-2B0AFA4793A3}.DevPartnerReleaseProfiler.ActiveCfg = DevPartnerReleaseProfiler|Win32
+		{A5ECF626-2A48-4B8F-A2AA-2B0AFA4793A3}.DevPartnerReleaseProfiler.Build.0 = DevPartnerReleaseProfiler|Win32
+		{A5ECF626-2A48-4B8F-A2AA-2B0AFA4793A3}.Rel Test.ActiveCfg = Rel Test|Win32
+		{A5ECF626-2A48-4B8F-A2AA-2B0AFA4793A3}.Rel Test.Build.0 = Rel Test|Win32
+		{A5ECF626-2A48-4B8F-A2AA-2B0AFA4793A3}.Rel Test with Debug Info.ActiveCfg = Rel Test with Debug Info|Win32
+		{A5ECF626-2A48-4B8F-A2AA-2B0AFA4793A3}.Rel Test with Debug Info.Build.0 = Rel Test with Debug Info|Win32
+		{A5ECF626-2A48-4B8F-A2AA-2B0AFA4793A3}.Rel Test with Debug, Leda.ActiveCfg = Rel Test with Debug, Leda|Win32
+		{A5ECF626-2A48-4B8F-A2AA-2B0AFA4793A3}.Rel Test with Debug, Leda.Build.0 = Rel Test with Debug, Leda|Win32
+		{A5ECF626-2A48-4B8F-A2AA-2B0AFA4793A3}.Release.ActiveCfg = Release|Win32
+		{A5ECF626-2A48-4B8F-A2AA-2B0AFA4793A3}.Release.Build.0 = Release|Win32
+		{A5ECF626-2A48-4B8F-A2AA-2B0AFA4793A3}.Shareware.ActiveCfg = Shareware|Win32
+		{A5ECF626-2A48-4B8F-A2AA-2B0AFA4793A3}.Shareware.Build.0 = Shareware|Win32
+		{99A3432E-FB11-42D3-91CF-EBD80FAE887A}.Debug.ActiveCfg = Debug|Win32
+		{99A3432E-FB11-42D3-91CF-EBD80FAE887A}.Debug.Build.0 = Debug|Win32
+		{99A3432E-FB11-42D3-91CF-EBD80FAE887A}.DevPartnerDebugBoundsChecker.ActiveCfg = Debug|Win32
+		{99A3432E-FB11-42D3-91CF-EBD80FAE887A}.DevPartnerDebugBoundsChecker.Build.0 = Debug|Win32
+		{99A3432E-FB11-42D3-91CF-EBD80FAE887A}.DevPartnerDebugProfiler.ActiveCfg = Debug|Win32
+		{99A3432E-FB11-42D3-91CF-EBD80FAE887A}.DevPartnerDebugProfiler.Build.0 = Debug|Win32
+		{99A3432E-FB11-42D3-91CF-EBD80FAE887A}.DevPartnerReleaseProfiler.ActiveCfg = Release|Win32
+		{99A3432E-FB11-42D3-91CF-EBD80FAE887A}.DevPartnerReleaseProfiler.Build.0 = Release|Win32
+		{99A3432E-FB11-42D3-91CF-EBD80FAE887A}.Rel Test.ActiveCfg = Rel Test with Debug Info|Win32
+		{99A3432E-FB11-42D3-91CF-EBD80FAE887A}.Rel Test.Build.0 = Rel Test with Debug Info|Win32
+		{99A3432E-FB11-42D3-91CF-EBD80FAE887A}.Rel Test with Debug Info.ActiveCfg = Rel Test with Debug Info|Win32
+		{99A3432E-FB11-42D3-91CF-EBD80FAE887A}.Rel Test with Debug Info.Build.0 = Rel Test with Debug Info|Win32
+		{99A3432E-FB11-42D3-91CF-EBD80FAE887A}.Rel Test with Debug, Leda.ActiveCfg = Rel Test with Debug Info|Win32
+		{99A3432E-FB11-42D3-91CF-EBD80FAE887A}.Rel Test with Debug, Leda.Build.0 = Rel Test with Debug Info|Win32
+		{99A3432E-FB11-42D3-91CF-EBD80FAE887A}.Release.ActiveCfg = Release|Win32
+		{99A3432E-FB11-42D3-91CF-EBD80FAE887A}.Release.Build.0 = Release|Win32
+		{99A3432E-FB11-42D3-91CF-EBD80FAE887A}.Shareware.ActiveCfg = Rel Test with Debug Info|Win32
+		{99A3432E-FB11-42D3-91CF-EBD80FAE887A}.Shareware.Build.0 = Rel Test with Debug Info|Win32
+		{57068CA8-524C-41AC-9230-FF9DCDA778F6}.Debug.ActiveCfg = Debug|Win32
+		{57068CA8-524C-41AC-9230-FF9DCDA778F6}.Debug.Build.0 = Debug|Win32
+		{57068CA8-524C-41AC-9230-FF9DCDA778F6}.DevPartnerDebugBoundsChecker.ActiveCfg = Debug|Win32
+		{57068CA8-524C-41AC-9230-FF9DCDA778F6}.DevPartnerDebugBoundsChecker.Build.0 = Debug|Win32
+		{57068CA8-524C-41AC-9230-FF9DCDA778F6}.DevPartnerDebugProfiler.ActiveCfg = Debug|Win32
+		{57068CA8-524C-41AC-9230-FF9DCDA778F6}.DevPartnerDebugProfiler.Build.0 = Debug|Win32
+		{57068CA8-524C-41AC-9230-FF9DCDA778F6}.DevPartnerReleaseProfiler.ActiveCfg = Release|Win32
+		{57068CA8-524C-41AC-9230-FF9DCDA778F6}.DevPartnerReleaseProfiler.Build.0 = Release|Win32
+		{57068CA8-524C-41AC-9230-FF9DCDA778F6}.Rel Test.ActiveCfg = Rel Test with Debug Info|Win32
+		{57068CA8-524C-41AC-9230-FF9DCDA778F6}.Rel Test.Build.0 = Rel Test with Debug Info|Win32
+		{57068CA8-524C-41AC-9230-FF9DCDA778F6}.Rel Test with Debug Info.ActiveCfg = Rel Test with Debug Info|Win32
+		{57068CA8-524C-41AC-9230-FF9DCDA778F6}.Rel Test with Debug Info.Build.0 = Rel Test with Debug Info|Win32
+		{57068CA8-524C-41AC-9230-FF9DCDA778F6}.Rel Test with Debug, Leda.ActiveCfg = Rel Test with Debug Info|Win32
+		{57068CA8-524C-41AC-9230-FF9DCDA778F6}.Rel Test with Debug, Leda.Build.0 = Rel Test with Debug Info|Win32
+		{57068CA8-524C-41AC-9230-FF9DCDA778F6}.Release.ActiveCfg = Release|Win32
+		{57068CA8-524C-41AC-9230-FF9DCDA778F6}.Release.Build.0 = Release|Win32
+		{57068CA8-524C-41AC-9230-FF9DCDA778F6}.Shareware.ActiveCfg = Rel Test with Debug Info|Win32
+		{57068CA8-524C-41AC-9230-FF9DCDA778F6}.Shareware.Build.0 = Rel Test with Debug Info|Win32
+		{CB124FB3-6092-4C79-B976-5F3A675F84E3}.Debug.ActiveCfg = Debug|Win32
+		{CB124FB3-6092-4C79-B976-5F3A675F84E3}.Debug.Build.0 = Debug|Win32
+		{CB124FB3-6092-4C79-B976-5F3A675F84E3}.DevPartnerDebugBoundsChecker.ActiveCfg = DevPartnerDebugProfiler|Win32
+		{CB124FB3-6092-4C79-B976-5F3A675F84E3}.DevPartnerDebugBoundsChecker.Build.0 = DevPartnerDebugProfiler|Win32
+		{CB124FB3-6092-4C79-B976-5F3A675F84E3}.DevPartnerDebugProfiler.ActiveCfg = DevPartnerDebugProfiler|Win32
+		{CB124FB3-6092-4C79-B976-5F3A675F84E3}.DevPartnerDebugProfiler.Build.0 = DevPartnerDebugProfiler|Win32
+		{CB124FB3-6092-4C79-B976-5F3A675F84E3}.DevPartnerReleaseProfiler.ActiveCfg = DevPartnerDebugProfiler|Win32
+		{CB124FB3-6092-4C79-B976-5F3A675F84E3}.DevPartnerReleaseProfiler.Build.0 = DevPartnerDebugProfiler|Win32
+		{CB124FB3-6092-4C79-B976-5F3A675F84E3}.Rel Test.ActiveCfg = Rel Test|Win32
+		{CB124FB3-6092-4C79-B976-5F3A675F84E3}.Rel Test.Build.0 = Rel Test|Win32
+		{CB124FB3-6092-4C79-B976-5F3A675F84E3}.Rel Test with Debug Info.ActiveCfg = Rel Test with Debug Info|Win32
+		{CB124FB3-6092-4C79-B976-5F3A675F84E3}.Rel Test with Debug Info.Build.0 = Rel Test with Debug Info|Win32
+		{CB124FB3-6092-4C79-B976-5F3A675F84E3}.Rel Test with Debug, Leda.ActiveCfg = Rel Test with Debug Info|Win32
+		{CB124FB3-6092-4C79-B976-5F3A675F84E3}.Rel Test with Debug, Leda.Build.0 = Rel Test with Debug Info|Win32
+		{CB124FB3-6092-4C79-B976-5F3A675F84E3}.Release.ActiveCfg = Release|Win32
+		{CB124FB3-6092-4C79-B976-5F3A675F84E3}.Release.Build.0 = Release|Win32
+		{CB124FB3-6092-4C79-B976-5F3A675F84E3}.Shareware.ActiveCfg = DevPartnerDebugProfiler|Win32
+		{CB124FB3-6092-4C79-B976-5F3A675F84E3}.Shareware.Build.0 = DevPartnerDebugProfiler|Win32
+		{0948D658-AF42-4350-BE81-FC9CB620120D}.Debug.ActiveCfg = Debug|Win32
+		{0948D658-AF42-4350-BE81-FC9CB620120D}.Debug.Build.0 = Debug|Win32
+		{0948D658-AF42-4350-BE81-FC9CB620120D}.DevPartnerDebugBoundsChecker.ActiveCfg = Debug|Win32
+		{0948D658-AF42-4350-BE81-FC9CB620120D}.DevPartnerDebugBoundsChecker.Build.0 = Debug|Win32
+		{0948D658-AF42-4350-BE81-FC9CB620120D}.DevPartnerDebugProfiler.ActiveCfg = Debug|Win32
+		{0948D658-AF42-4350-BE81-FC9CB620120D}.DevPartnerDebugProfiler.Build.0 = Debug|Win32
+		{0948D658-AF42-4350-BE81-FC9CB620120D}.DevPartnerReleaseProfiler.ActiveCfg = Release|Win32
+		{0948D658-AF42-4350-BE81-FC9CB620120D}.DevPartnerReleaseProfiler.Build.0 = Release|Win32
+		{0948D658-AF42-4350-BE81-FC9CB620120D}.Rel Test.ActiveCfg = Rel Test with Debug Info|Win32
+		{0948D658-AF42-4350-BE81-FC9CB620120D}.Rel Test.Build.0 = Rel Test with Debug Info|Win32
+		{0948D658-AF42-4350-BE81-FC9CB620120D}.Rel Test with Debug Info.ActiveCfg = Rel Test with Debug Info|Win32
+		{0948D658-AF42-4350-BE81-FC9CB620120D}.Rel Test with Debug Info.Build.0 = Rel Test with Debug Info|Win32
+		{0948D658-AF42-4350-BE81-FC9CB620120D}.Rel Test with Debug, Leda.ActiveCfg = Rel Test with Debug Info|Win32
+		{0948D658-AF42-4350-BE81-FC9CB620120D}.Rel Test with Debug, Leda.Build.0 = Rel Test with Debug Info|Win32
+		{0948D658-AF42-4350-BE81-FC9CB620120D}.Release.ActiveCfg = Release|Win32
+		{0948D658-AF42-4350-BE81-FC9CB620120D}.Release.Build.0 = Release|Win32
+		{0948D658-AF42-4350-BE81-FC9CB620120D}.Shareware.ActiveCfg = Rel Test with Debug Info|Win32
+		{0948D658-AF42-4350-BE81-FC9CB620120D}.Shareware.Build.0 = Rel Test with Debug Info|Win32
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+	GlobalSection(DPCodeReviewSolutionGUID) = preSolution
+		DPCodeReviewSolutionGUID = {00000000-0000-0000-0000-000000000000}
+	EndGlobalSection
+	GlobalSection(DevPartner Solution Properties) = postSolution
+	EndGlobalSection
+	GlobalSection(DevPartner) = postSolution
+	EndGlobalSection
+	GlobalSection(DevPartner) = postSolution
+	EndGlobalSection
+	GlobalSection(DevPartner) = postSolution
+	EndGlobalSection
+	GlobalSection(DevPartner) = postSolution
+	EndGlobalSection
+	GlobalSection(DevPartner) = postSolution
+	EndGlobalSection
+	GlobalSection(DevPartner) = postSolution
+	EndGlobalSection
+	GlobalSection(DevPartner) = postSolution
+	EndGlobalSection
+	GlobalSection(DevPartner) = postSolution
+	EndGlobalSection
+	GlobalSection(DevPartner) = postSolution
+	EndGlobalSection
+	GlobalSection(DevPartner) = postSolution
+	EndGlobalSection
+	GlobalSection(DevPartner) = postSolution
+	EndGlobalSection
+	GlobalSection(DevPartner) = postSolution
+	EndGlobalSection
+	GlobalSection(DevPartner) = postSolution
+	EndGlobalSection
+	GlobalSection(DevPartner) = postSolution
+	EndGlobalSection
+	GlobalSection(DevPartner) = postSolution
+	EndGlobalSection
+	GlobalSection(DevPartner) = postSolution
+	EndGlobalSection
+EndGlobal

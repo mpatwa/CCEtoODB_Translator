@@ -1,0 +1,63 @@
+/******************************* T2BDEFS.H *********************************/
+/***************************  2-D Topology *********************************/
+/*!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
+/*!!!!!!!!       (C) Copyright 1989 - 1995       Building Block Software   !!!!!!!*/
+/*!!!!!!!!                    All rights reserved                   !!!!!!!*/
+/*!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
+#ifndef T2BDEFS
+#define T2BDEFS
+
+#include <bbsdefs.h>
+#include <dmdefs.h>
+#include <c2defs.h>
+#include <t2defs.h>
+extern  DML_LIST t2b_offset_region __(( T2_REGION DUMMY0 , REAL DUMMY1 , 
+            T2_OFFSET_DESC DUMMY2 , DML_LIST DUMMY3 )) ;
+extern  DML_LIST t2b_union_rr __(( T2_REGION DUMMY0 , T2_REGION DUMMY1 , 
+            DML_LIST DUMMY2 )) ; 
+extern  DML_LIST t2b_union_rl __(( T2_REGION DUMMY0 , DML_LIST DUMMY1 , 
+            DML_LIST DUMMY2 )) ;
+extern  DML_LIST t2b_union_l __(( DML_LIST DUMMY0 , DML_LIST DUMMY1 )) ;
+extern  DML_LIST t2b_common_rr __(( T2_REGION DUMMY0 , T2_REGION DUMMY1 , 
+            DML_LIST DUMMY2 )) ; 
+extern  DML_LIST t2b_common_rl __(( T2_REGION DUMMY0 , DML_LIST DUMMY1 , 
+            DML_LIST DUMMY2 )) ;
+extern  DML_LIST t2b_common_l __(( DML_LIST DUMMY0 , DML_LIST DUMMY1 )) ;
+extern  DML_LIST t2b_diff_rr __(( T2_REGION DUMMY0 , T2_REGION DUMMY1 , 
+            DML_LIST DUMMY2 )) ; 
+extern  DML_LIST t2b_diff_rl __(( T2_REGION DUMMY0 , DML_LIST DUMMY1 , 
+            DML_LIST DUMMY2 )) ;
+extern  DML_LIST t2b_offset_loop __(( T2_LOOP, REAL, 
+            T2_OFFSET_DESC, DML_LIST )) ;
+extern  INT t2b_offset_loop_array __(( T2_LOOP DUMMY0 , REAL DUMMY1 , 
+            INT DUMMY2 , T2_OFFSET_DESC DUMMY3 , T2_LOOP* DUMMY4 )) ;
+extern  INT t2b_offset_loop_lists __(( T2_LOOP DUMMY0 , REAL DUMMY1 , 
+            INT DUMMY2 , T2_OFFSET_DESC DUMMY3 , DML_LIST* DUMMY4 )) ;
+extern  DML_LIST t2b_fillet_loop __(( T2_LOOP DUMMY0 , REAL DUMMY1 , 
+            DML_LIST DUMMY2 )) ;
+extern  DML_LIST t2b_fillet_region __(( T2_REGION DUMMY0 , REAL DUMMY1 , 
+            DML_LIST DUMMY2 )) ;
+extern  T2_OD   t2b_od_lookup __(( T2_OFFSET_DESC DUMMY0 , ANY DUMMY1 , 
+            REAL DUMMY2 , REAL* DUMMY3 )) ;
+extern  void t2b_od_select_loop __(( T2_LOOP DUMMY0 , T2_OFFSET_DESC DUMMY1 , 
+            REAL DUMMY2 )) ;
+extern  void t2b_od_select_loop_list __(( T2_LOOP DUMMY0 , DML_LIST DUMMY1 , 
+            REAL DUMMY2 )) ;
+extern  DML_ITEM t2b_append_od __(( ANY DUMMY0 , PT2 DUMMY1 , REAL DUMMY2 , 
+            T2_OFFSET_DESC DUMMY3 )) ;
+extern  DML_ITEM t2b_append_od_list __(( ANY DUMMY0 , PT2 DUMMY1 , 
+            REAL DUMMY2 , DML_LIST DUMMY3 )) ;
+extern  T2_OD t2b_create_od __(( ANY DUMMY0 , PT2 DUMMY1 , REAL DUMMY2 )) ;
+extern  void t2b_free_od __(( T2_OD DUMMY0 )) ;
+extern  T2_OFFSET_DESC t2b_create_offset_desc __(( void )) ;
+extern  T2_OFFSET_DESC t2b_offset_set_mode __(( T2_OFFSET_DESC DUMMY0 , 
+            T2_OFFSET_MODE DUMMY1 )) ;
+extern  void        t2b_free_offset_desc __(( T2_OFFSET_DESC DUMMY0 )) ;
+extern  void t2b_xform_od_list __(( DML_LIST DUMMY0 , C2_XFORM DUMMY1 )) ;
+extern  T2_LOOP t2b_inflate_edge __(( T2_EDGE DUMMY0 , REAL DUMMY1 )) ;
+extern  T2_LOOP t2b_inflate_line __(( PT2 DUMMY0 , PT2 DUMMY1 , 
+            REAL DUMMY2 )) ;
+extern  T2_LOOP t2b_taper_loop __(( T2_LOOP DUMMY0 , REAL DUMMY1 , 
+            REAL DUMMY2 , REAL DUMMY3 )) ;
+#endif
+

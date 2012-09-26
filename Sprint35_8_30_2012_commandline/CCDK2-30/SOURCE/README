@@ -1,0 +1,52 @@
+The following batch files build the CCDK libraries.  For each 
+compiler, two libraries are built: one with spline code, and one 
+without.
+
+ccbc45.bat          - Borland 3.1 and 4.x
+
+ccms80r.bat         - Microsoft C/C++ 8.0 16-bit (MSVC 1.5x) for DOS
+
+ccms80rw.bat        - Microsoft C/C++ 8.0 16-bit (MSVC 1.5x) for Windows 3.1
+
+ccms91s.bat         - Microsoft C/C++ 8.0/9.x 32-bit (MSVC 1.0/2.x) 
+                      for DOS; requires Phar Lap TNT DOS Extender
+
+ccms91sw.bat        - Microsoft C/C++ 8.0/9.x 32-bit (MSVC 1.0/2.x) 
+                      for Windows (Win32s, Windows NT and Windows 95)
+
+ccw105.bat          - WATCOM C/C++ 9.x/10.x (32-bit) for Extended DOS
+
+
+The library names are encoded as follows:
+
+N+S+C+[W]
+
+where   N   denotes CCDK edition (2 => CCDK / 2D)
+
+        S   denotes spline/non-spline (n=>spline support is disabled
+            s=>spline support is enabled)
+
+        C   denotes compiler (bc45=>Borland 3.1/4.x, 
+            ms80r=>Microsoft 8.0 16-bit, 
+            ms91s=>Microsoft 8.0/9.x 32-bit, 
+            w105=>WATCOM 9.x/10.x)
+
+        W   denotes "compiled for Windows" (w=>Windows support is 
+            enabled)
+ 
+For example,
+
+2sm91sw.lib (2+s+m91s+w)
+
+is the CAD/CAM Developer's Kit /2D library with spline and Windows 
+code enabled for the Microsoft C/C++ 8.0/9.x 32-bit compiler.
+
+Once you have built object libraries for your compiler, run the 
+batch files in the samples directories to test your installation and 
+begin programming with the CAD/CAM Developer's Kit / 2D.
+
+We hope you save thousands of hours of time, effort and expense by 
+using CCDK.  For support or upgrades, call Building Block Software
+at (617) 860-9091, or send a fax message to (617) 860-9066, or 
+send email to 70471,734 on Compuserve (70471.734@compuserve.com on 
+Internet).
